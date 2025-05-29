@@ -9,10 +9,11 @@
 
 - **Alt Yapı**: [MkDocs](https://www.mkdocs.org/)
 - **Tema**: [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
-- **Versiyon Kontrolü**: Git + Private GitHub Repo
+- **Versiyon Kontrolü**: GitHub
 - **Editör**: Visual Studio Code
-- **Lokal Yayın**: `python -m mkdocs serve`
-- **Canlı Yayın (Opsiyonel)**: GitHub Pages (gh-deploy)
+- **Lokal Yayın**: Gizli dosyalarla birlikte tüm arşive erişim
+- **Canlı Yayın (Opsiyonel)**: GitHub Pages (gh-deploy) ile sıırlı erişim
+- **Bulut Sistemi**: GitHub Repository ile ekstra evrak yönetimi
 
 ---
 
@@ -20,15 +21,24 @@
 
 ```plaintext
 docs/
-├── index.md
-├── about.md
-├── references.md
-├── notes/
-│ └── 00-setup-guide.md ← bu dosya
-├── projects/
-│ └── marinemath/
-└── knowledge-base/
-└── python/
+├── index.md                          ← Ana Sayfa
+├── public/
+│   ├── about.md                      ← Hakkımda
+│   ├── references.md                 ← Referanslar
+│   ├── notes/                        ← Genel Notlar (kişisel, gelişim süreci)
+│   │   └── index.md
+│   ├── projects/                     ← Açık Projeler
+│   │   └── index.md
+│   └── knowledge-base/              ← Bilgi Bankası (rehber, teknik içerik)
+│       ├── 00-setup-guide.md        ← Kullanım Rehberi
+│       └── python/
+│           └── numerical_analysis/
+│               └── numerical_analysis_modelleme.md
+├── private/
+│   ├── gizli.md                     ← Gizli Not
+│   └── projects/
+│       └── marinemath/
+│           └── index.md            ← MarineMath özel proje sayfası
 ```
 
 ## 📌 Yeni Sayfa ve Menü Ekleme Rehberi
