@@ -28,7 +28,6 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.sections
-    - content.code.annotate
 
   font:
     text: Roboto
@@ -54,5 +53,4 @@ nav:
   - Notlar:
       - Genel Notlar: notes/index.md
       - Kurulum Rehberi: notes/00-setup-guide.md
-
   - Kaynaklar: references.md

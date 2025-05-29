@@ -83,7 +83,27 @@ Ya da:
 
 Bağlantı verirken göreli yol kullanmaya dikkat ederim (../ üst klasöre çıkar).
 
-### 🎯 5. Unutma!
+
+## 📦 Admonition Kutuları
+
+!!! note "Not"
+    Bu bir bilgilendirme kutusudur. İçeriğe genel bilgi eklemek için kullanılır.
+
+!!! tip "İpucu"
+    Bu kutular öğrenme sırasında küçük ama değerli bilgiler verir. Genelde mavi tonlarda görünür 💡
+
+!!! warning "Uyarı"
+    Bu kutu dikkat edilmesi gereken durumları belirtmek için kullanılır. Renkleri sarı-turuncudur ⚠️
+
+!!! danger "Tehlike"
+    Bu, potansiyel hata veya riskli adımları belirtmek için kullanılan **en sert** uyarıdır 🚨
+
+!!! example "Örnek"
+    Bu, bir konsepti açıklarken örnek vermek için kullanılabilir. Örnekler öğrenmenin anahtarıdır 🔑
+
+---
+
+## 🎯 5. Unutma!
 Markdown dosyaları docs/ klasörü altından erişilir.
 
 Menü sırasını belirlemek için dosya isimlerine 00-, 01- gibi ön ek koyabilirim.
