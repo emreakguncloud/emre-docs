@@ -1,0 +1,13 @@
+site_name: Emre Akgün Dökümantasyon
+theme:
+  name: material
+
+nav:
+  - Ana Sayfa: index.md
+  - Hakkımda: about.md
+  - Projeler:
+      - MarineMath: projects/marinemath/index.md
+  - Bilgi Bankası:
+      - Python: knowledge-base/python/index.md
+  - Notlar: notes/index.md
+  - Kaynaklar: references.md
