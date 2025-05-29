@@ -2,23 +2,18 @@ site_name: Emre Akgün Dökümantasyon
 theme:
   name: material
   palette:
-
-    # Light mode (varsayılan)
     - scheme: default
       primary: teal
       accent: indigo
       toggle:
         icon: material/brightness-3
         name: Karanlık moda geç
-
-    # Dark mode
     - scheme: slate
       primary: teal
       accent: indigo
       toggle:
         icon: material/brightness-4
         name: Aydınlık moda geç
-
   logo: images/mercedes-benz-1-logo-png-transparent.png
   favicon: images/favicon.ico
   features:
@@ -27,7 +22,10 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.sections
-
+    - search.suggest
+    - search.highlight
+    - navigation.top
+    - content.code.copy
   font:
     text: Roboto
     code: Fira Code
@@ -40,7 +38,6 @@ markdown_extensions:
       linenums: true
   - admonition
   - attr_list
-
 
 nav:
   - Ana Sayfa: index.md
