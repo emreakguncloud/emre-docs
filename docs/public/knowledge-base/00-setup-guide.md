@@ -1,4 +1,4 @@
-# Teknik Dökümantasyon Yapısı Kurulum Rehberi
+# Teknik Dökümantasyon Yapısı Rehberi
 
 > Bu sayfa, bu dokümantasyon sistemini nasıl kurduğumu, nasıl genişleteceğimi ve gelecek notlarımı nasıl ilişkilendireceğimi anlatır.  
 > Gelecekte bir gün bunları neden yaptığımı unutursam, kendime selam olsun: *"Emre, işte bu yüzden yaptın!"*
@@ -84,7 +84,55 @@ Ya da:
 Bağlantı verirken göreli yol kullanmaya dikkat ederim (../ üst klasöre çıkar).
 
 
-## 📦 Admonition Kutuları
+## 🎯 5. Fotoğraf Ekleme!
+
+!!! note "Görsel Eklemek için:"
+
+    ```
+        ![Görsel açıklaması](../images/marinemath-akis.png){ width="400px" align="center" }
+        > 📝 *Yukarıdaki şema MarineMath projesinde hesaplama sıralamasını gösterir.*
+        Bu şekilde açıklaman görselin hemen altında "not" gibi görünür 💬
+    ```
+
+![Görsel açıklaması](../images/örnek görsel.jpg){ width="400px" align="center" }
+> 📝 *Yukarıdaki render ürün yerleştirme gösterir.*
+
+
+## & Son Not
+
+Markdown dosyaları docs/ klasörü altından erişilir.
+
+Menü sırasını belirlemek için dosya isimlerine 00-, 01- gibi ön ek koyabilirim.
+
+`mkdocs serve` ile canlı sonucu görebilirim.
+
+## Markdown Not Alma Rehberi
+
+Bu doküman, MkDocs Material temasında desteklenen not alma ve içerik biçimlendirme özelliklerinin kullanımını örneklerle açıklar.  
+İlk satırda Markdown kodu gösterilir, altında ise nasıl göründüğü.
+
+---
+
+## ✅ Admonitions (Uyarı Kutuları)
+
+```
+!!! note
+    Bu bir not kutusudur.
+```
+
+!!! note
+    Bu bir not kutusudur.
+
+```
+!!! warning
+    Bu bir uyarı kutusudur!
+```
+
+!!! warning
+    Bu bir uyarı kutusudur!
+
+```
+Tümü şu şekildedir:
 
 !!! note "Not"
     Bu bir bilgilendirme kutusudur. İçeriğe genel bilgi eklemek için kullanılır.
@@ -101,26 +149,133 @@ Bağlantı verirken göreli yol kullanmaya dikkat ederim (../ üst klasöre çı
 !!! example "Örnek"
     Bu, bir konsepti açıklarken örnek vermek için kullanılabilir. Örnekler öğrenmenin anahtarıdır 🔑
 
+```
+
 ---
 
-## 🎯 5. Fotoğraf Ekleme!
 
-!!! note "Görsel Eklemek için:"
 
-    ```
-        ![Görsel açıklaması](../images/marinemath-akis.png){ width="400px" align="center" }
-        > 📝 *Yukarıdaki şema MarineMath projesinde hesaplama sıralamasını gösterir.*
-        Bu şekilde açıklaman görselin hemen altında "not" gibi görünür 💬
-    ```
+## ✅ Kod Bloğu (Highlight ve Line Number)
 
-![Görsel açıklaması](../images/örnek görsel.jpg){ width="400px" align="center" }
-> 📝 *Yukarıdaki render ürün yerleştirme gösterir.*
+```
+```python hl_lines="2"
+print("Hello")
+print("World")
+```
+```
 
-## & Son Not
+```python hl_lines="2"
+print("Hello")
+print("World")
+```
 
-Markdown dosyaları docs/ klasörü altından erişilir.
+---
 
-Menü sırasını belirlemek için dosya isimlerine 00-, 01- gibi ön ek koyabilirim.
+## ✅ Satır İçi Kod
 
-`mkdocs serve` ile canlı sonucu görebilirim.
+```
+Bunu `print("hello world")` gibi kullanabilirsin.
+```
 
+Bunu `print("hello world")` gibi kullanabilirsin.
+
+---
+
+## ✅ Görev Listesi (Tasklist)
+
+```
+- [x] Bu tamamlandı
+- [ ] Bu henüz tamamlanmadı
+```
+
+- [x] Bu tamamlandı  
+- [ ] Bu henüz tamamlanmadı
+
+---
+
+## ✅ Başlıklar (TOC için)
+
+```
+# Başlık 1
+## Başlık 2
+### Başlık 3
+```
+
+# Başlık 1
+## Başlık 2
+### Başlık 3
+
+---
+
+## ✅ İçindekiler Bağlantısı (Permalink)
+
+Bu özellik otomatik olarak başlıkların yanına bağlantı simgesi ekler.
+
+---
+
+## ✅ Çok Satırlı Kod Blokları (Superfences)
+
+```
+```js
+console.log("Merhaba dünya");
+```
+```
+
+```js
+console.log("Merhaba dünya");
+```
+
+---
+
+## ✅ Kod Dili Yakalama
+
+Kod bloklarının sağ üstüne dili belirtirsen dile özel renklendirme yapar:
+
+```python
+print("kopyalanabilir kod")
+```
+
+---
+
+## ✅ Özel Nitelikler (attr_list)
+
+```
+### Başlık {.custom-class}
+```
+
+### Başlık {.custom-class}
+
+> Bu özellik özel CSS sınıfları eklemeni sağlar.
+
+---
+
+## ✅ Kod Renk Algılamayı Kapatmak
+
+```
+```text
+Bu metin sadece düz yazı.
+```
+```
+
+```text
+Bu metin sadece düz yazı.
+```
+
+---
+
+## ✅ YAML Özelliklerinden Etkilenmeyen Notlar
+
+MkDocs navigasyonu, logolar, faviconlar ve tema renkleri dokümantasyon içinde görünmez. Ancak `logo` veya `favicon` gibi şeyler tema bütünlüğünü etkiler.
+
+---
+
+## 🔍 Arama Özellikleri
+
+- Otomatik tamamlayıcı (`search.suggest`)
+- Vurgulama (`search.highlight`)
+- Anlık arama (`navigation.instant`)
+- Sayfa içi takip (`navigation.tracking`)
+
+Bu özellikler YAML içinde aktiftir, doğrudan Markdown içinde görünmez ama işlevsellik sağlar.
+
+---

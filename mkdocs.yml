@@ -41,18 +41,16 @@ markdown_extensions:
   - attr_list
   - pymdownx.highlight
   - pymdownx.superfences
-  - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.tasklist:
       custom_checkbox: true
 
 nav:
   - Ana Sayfa: index.md
-  - Hakkımda: public/about.md
   - Projeler:
       - ProjeÖrnek: public/projects/index.md
   - Bilgi Bankası:
-      - Kurulum Rehberi: public/knowledge-base/00-setup-guide.md
+      - Kullanım Rehberi: public/knowledge-base/00-setup-guide.md
       - Python:
           - Sayısal Analiz -- Modelleme ve Hata Hesaplama: public/knowledge-base/python/numerical_analysis/numerical_analysis_modelleme.md
   - Notlar:

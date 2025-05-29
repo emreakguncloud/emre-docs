@@ -1,17 +1,24 @@
-# Welcome to MkDocs
+# Emre Akgün Dökümantasyonuna Hoş Geldiniz
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Merhaba, ben **Emre Akgün**. Hacettepe Üniversitesi Fizik Mühendisliği 3. sınıf öğrencisiyim. Aynı zamanda **FCP Marine** bünyesinde Proje Uzman Yardımcısı olarak profesyonel kariyerimi sürdürüyorum. Bu platformda, hem bireysel projelerimi hem de mühendislik, yazılım ve Ar-Ge alanındaki bilgi birikimimi sistematik şekilde paylaşıyorum.
 
-## Commands
+## 🚀 **Uzmanlık Alanlarım:**
+- Yüzer yapı tasarımı ve mühendislik hesaplamaları
+- Python tabanlı yazılım geliştirme
+- CAD tabanlı modelleme ve teknik çizim (SolidWorks, SketchUp)
+- React ile platform-bağımsız web uygulamaları
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## 🧠 **Ne Sunuyorum?**
+Bu site bir belge arşivi olmanın ötesinde, benim mühendislik vizyonumu ve pratik çözümlerimi yansıtan bir bilgi bankasıdır. Kendi geliştirdiğim projeler (örneğin **MarineMath**), notlar, kaynaklar ve teknik dokümanlar üzerinden öğrenmeye ve paylaşmaya açık bir alan oluşturuyorum.
 
-## Project layout
+## 💡 **Hedefim:**
+Kısa vadede farklı alanlarda deneyim kazanarak kendimi geliştirmek, uzun vadede ise savunma sanayi ve inşaat mühendisliği gibi stratejik sektörlerde yüksek ölçekli projelerde yer almak. R&D odaklı yaklaşımımla teknoloji üretiminde katkı sağlamayı amaçlıyorum.
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## 📩 **İletişim**
+- Kişisel e-mail adresim: emreakgun2003@gmail.com
+- Şirket e-mail adresim: emre@fcpmarine.com.tr
+---
+##  **Teşekkürler**
+Bu site zamanla büyüyen, gelişen ve derinleşen bir bilgi haritasıdır. Ziyaret ettiğiniz için teşekkür ederim.
+
+**– Emre Akgün**
