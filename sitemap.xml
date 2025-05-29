@@ -1,3 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://emreakguncloud.github.io/emre-docs/index.html</loc>
+         <lastmod>2025-05-29</lastmod>
+    </url>
+    <url>
+         <loc>https://emreakguncloud.github.io/emre-docs/about.html</loc>
+         <lastmod>2025-05-29</lastmod>
+    </url>
+    <url>
+         <loc>https://emreakguncloud.github.io/emre-docs/references.html</loc>
+         <lastmod>2025-05-29</lastmod>
+    </url>
+    <url>
+         <loc>https://emreakguncloud.github.io/emre-docs/knowledge-base/00-setup-guide.html</loc>
+         <lastmod>2025-05-29</lastmod>
+    </url>
+    <url>
+         <loc>https://emreakguncloud.github.io/emre-docs/knowledge-base/python/index.html</loc>
+         <lastmod>2025-05-29</lastmod>
+    </url>
+    <url>
+         <loc>https://emreakguncloud.github.io/emre-docs/notes/index.html</loc>
+         <lastmod>2025-05-29</lastmod>
+    </url>
+    <url>
+         <loc>https://emreakguncloud.github.io/emre-docs/projects/index.html</loc>
+         <lastmod>2025-05-29</lastmod>
+    </url>
 </urlset>
