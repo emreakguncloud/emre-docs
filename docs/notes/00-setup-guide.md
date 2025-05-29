@@ -16,7 +16,7 @@
 
 ---
 
-## 📁 Klasör Yapısı
+## 📁 Örnek Klasör Yapısı
 
 ```plaintext
 docs/
@@ -103,7 +103,16 @@ Bağlantı verirken göreli yol kullanmaya dikkat ederim (../ üst klasöre çı
 
 ---
 
-## 🎯 5. Unutma!
+## 🎯 5. Fotoğraf Ekleme!
+
+!!! note "Görsel Eklemek için:"
+
+    `![Görsel açıklaması](../images/marinemath-akis.png){ width="400px" align="center" }`
+
+![Görsel açıklaması](../images/örnek görsel.jpg){ width="400px" align="center" }
+
+## & Son Not
+
 Markdown dosyaları docs/ klasörü altından erişilir.
 
 Menü sırasını belirlemek için dosya isimlerine 00-, 01- gibi ön ek koyabilirim.
