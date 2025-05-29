@@ -72,14 +72,14 @@ nav:
 ### 🔹 4. Linkleme (İçeriden İçeriğe)
 
 Proje veya bilgi notları arasında bağlantı vermek için:
-`[MarineMath'a git](../projects/marinemath/index.md)`
+`[Notlar'a git](../notes/index.md)`
 
-[MarineMath'a git](../projects/marinemath/index.md)
+[Notlar'a git](../notes/index.md)
 
 Ya da:
-`[Bkz: MarineMath](../projects/marinemath/index.md)`
+`[Bkz: Notlar](../notes/index.md)`
 
-[Bkz: MarineMath](../projects/marinemath/index.md)
+[Bkz: Notlar](../notes/index.md)
 
 Bağlantı verirken göreli yol kullanmaya dikkat ederim (../ üst klasöre çıkar).
 

@@ -1,4 +1,5 @@
 site_name: Emre Akgün Dökümantasyon
+docs_dir: docs/public
 theme:
   name: material
   palette:
@@ -14,8 +15,8 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Aydınlık moda geç
-  logo: public/images/mercedes-benz-1-logo-png-transparent.png
-  favicon: public/images/favicon.ico
+  logo: images/mercedes-benz-1-logo-png-transparent.png
+  favicon: images/favicon.ico
   features:
     - navigation.tabs
     - toc.integrate
@@ -40,16 +41,13 @@ markdown_extensions:
   - attr_list
 
 nav:
-  - Ana Sayfa: public/index.md
-  - Hakkımda: public/about.md
+  - Ana Sayfa: index.md
+  - Hakkımda: about.md
   - Projeler:
-      - ProjeÖrnek: public/projects/index.md
+      - Örnek Proje: projects/index.md
   - Bilgi Bankası:
-      - Kurulum Rehberi: public/knowledge-base/00-setup-guide.md
-      - Python: public/knowledge-base/python/index.md
+      - Kurulum Rehberi: knowledge-base/00-setup-guide.md
+      - Python: knowledge-base/python/index.md
   - Notlar:
-      - Genel Notlar: public/notes/index.md
-  - Kaynaklar: public/references.md
-  - Gizli Projeler:
-      - MarineMath: private/projects/marinemath/index.md
-  - Gizli Not: private/gizli.md
+      - Genel Notlar: notes/index.md
+  - Kaynaklar: references.md
