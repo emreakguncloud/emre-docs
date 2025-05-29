@@ -107,9 +107,14 @@ Bağlantı verirken göreli yol kullanmaya dikkat ederim (../ üst klasöre çı
 
 !!! note "Görsel Eklemek için:"
 
-    `![Görsel açıklaması](../images/marinemath-akis.png){ width="400px" align="center" }`
+    ```
+        ![Görsel açıklaması](../images/marinemath-akis.png){ width="400px" align="center" }
+        > 📝 *Yukarıdaki şema MarineMath projesinde hesaplama sıralamasını gösterir.*
+        Bu şekilde açıklaman görselin hemen altında "not" gibi görünür 💬
+    ```
 
 ![Görsel açıklaması](../images/örnek görsel.jpg){ width="400px" align="center" }
+> 📝 *Yukarıdaki render ürün yerleştirme gösterir.*
 
 ## & Son Not
 
