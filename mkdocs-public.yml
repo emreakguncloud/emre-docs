@@ -18,8 +18,8 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Aydınlık moda geç
-  logo: images/mercedes-benz-1-logo-png-transparent.png
-  favicon: images/favicon.ico
+  logo: public/images/mercedes-benz-1-logo-png-transparent.png
+  favicon: public/images/favicon.ico
   features:
     - navigation.tabs
     - toc.integrate
@@ -42,6 +42,12 @@ markdown_extensions:
       linenums: true
   - admonition
   - attr_list
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 nav:
   - Ana Sayfa: index.md
@@ -50,7 +56,8 @@ nav:
       - Örnek Proje: projects/index.md
   - Bilgi Bankası:
       - Kurulum Rehberi: knowledge-base/00-setup-guide.md
-      - Python: knowledge-base/python/index.md
+      - Python:
+          - Sayısal Analiz -- Modelleme ve Hata Hesaplama: knowledge-base/python/numerical_analysis/numerical_analysis_modelleme.md
   - Notlar:
       - Genel Notlar: notes/index.md
   - Kaynaklar: references.md

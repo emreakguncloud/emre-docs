@@ -1,4 +1,5 @@
 site_name: Emre Akgün Dökümantasyon
+
 theme:
   name: material
   palette:
@@ -38,6 +39,12 @@ markdown_extensions:
       linenums: true
   - admonition
   - attr_list
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 nav:
   - Ana Sayfa: index.md
@@ -46,7 +53,8 @@ nav:
       - ProjeÖrnek: public/projects/index.md
   - Bilgi Bankası:
       - Kurulum Rehberi: public/knowledge-base/00-setup-guide.md
-      - Python: public/knowledge-base/python/index.md
+      - Python:
+          - Sayısal Analiz -- Modelleme ve Hata Hesaplama: public/knowledge-base/python/numerical_analysis/numerical_analysis_modelleme.md
   - Notlar:
       - Genel Notlar: public/notes/index.md
   - Kaynaklar: public/references.md
