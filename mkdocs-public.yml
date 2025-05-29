@@ -18,8 +18,8 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Aydınlık moda geç
-  logo: public/images/mercedes-benz-1-logo-png-transparent.png
-  favicon: public/images/favicon.ico
+  logo: images/mercedes-benz-1-logo-png-transparent.png
+  favicon: images/favicon.ico
   features:
     - navigation.tabs
     - toc.integrate
