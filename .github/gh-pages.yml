@@ -1,0 +1,32 @@
+name: Deploy MkDocs site (public only)
+
+on:
+  push:
+    branches:
+      - main  # ya da hangi brancha push ediyorsan
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repo'yu klonla
+        uses: actions/checkout@v3
+
+      - name: Python'ı kur
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Gereksinimleri kur
+        run: |
+          pip install mkdocs mkdocs-material
+
+      - name: MkDocs ile site'yi derle
+        run: mkdocs build -f mkdocs-public.yml
+
+      - name: GitHub Pages'e yükle
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./site
