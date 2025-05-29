@@ -1,6 +1,8 @@
 site_name: Emre Akgün Dökümantasyon
 site_url: https://emreakguncloud.github.io/emre-docs/
 docs_dir: docs/public
+use_directory_urls: false
+
 theme:
   name: material
   palette:
@@ -52,4 +54,3 @@ nav:
   - Notlar:
       - Genel Notlar: notes/index.md
   - Kaynaklar: references.md
-use_directory_urls: false  # URL'leri sonuna `/` koymadan düz yapar (GitHub Pages için stabil çalışır)
