@@ -82,14 +82,14 @@ nav:
 ### 🔹 4. Linkleme (İçeriden İçeriğe)
 
 Proje veya bilgi notları arasında bağlantı vermek için:
-`[Notlar'a git](../notes/index.md)`
+`[Referanslar'a git](../references.md)`
 
-[Notlar'a git](../notes/index.md)
+[Referanslar'a git](../references.md)
 
 Ya da:
-`[Bkz: Notlar](../notes/index.md)`
+`[Bkz: Referanslar](../references.md)`
 
-[Bkz: Notlar](../notes/index.md)
+[Bkz: Referanslar](../references.md)
 
 Bağlantı verirken göreli yol kullanmaya dikkat ederim (../ üst klasöre çıkar).
 

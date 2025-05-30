@@ -52,10 +52,11 @@ nav:
   - Bilgi Bankası:
       - Kullanım Rehberi: public/knowledge-base/00-setup-guide.md
       - Python:
-          - Sayısal Analiz -- Modelleme ve Hata Hesaplama: public/knowledge-base/python/numerical_analysis/numerical_analysis_modelleme.md
+          - Sayısal Analiz: 
+              - Modelleme ve Hata Hesaplama: public/knowledge-base/python/numerical_analysis/numerical_analysis_modelleme.md
           - Grafik Oluşturma: public\knowledge-base\python\graph\graph.md
   - Notlar:
-      - Genel Notlar: public/notes/index.md
+      - Sayısal Analiz: public/notes/sayısal-analiz-kavramları.md
   - Kaynaklar: public/references.md
   - Gizli Projeler:
       - MarineMath: private/projects/marinemath/index.md
