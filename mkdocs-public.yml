@@ -60,5 +60,6 @@ nav:
               - Modelleme ve Hata Hesaplama: knowledge-base/python/numerical_analysis/numerical_analysis_modelleme.md
           - Grafik Oluşturma: knowledge-base\python\graph\graph.md
   - Notlar:
+      - Genel Not: \notes\general.md
       - Sayısal Analiz: notes/sayısal-analiz-kavramları.md
   - Kaynaklar: references.md

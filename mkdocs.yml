@@ -56,6 +56,7 @@ nav:
               - Modelleme ve Hata Hesaplama: public/knowledge-base/python/numerical_analysis/numerical_analysis_modelleme.md
           - Grafik Oluşturma: public\knowledge-base\python\graph\graph.md
   - Notlar:
+      - Genel Not: public\notes\general.md
       - Sayısal Analiz: public/notes/sayısal-analiz-kavramları.md
   - Kaynaklar: public/references.md
   - Gizli Projeler:
