@@ -1,25 +1,34 @@
 # Emre Akgün Dökümantasyonuna Hoş Geldiniz
 
-Merhaba, ben **Emre Akgün**. Hacettepe Üniversitesi Fizik Mühendisliği 3. sınıf öğrencisiyim. Aynı zamanda **FCP Marine** bünyesinde Proje Uzman Yardımcısı olarak profesyonel kariyerimi sürdürüyorum. Bu platformda, hem bireysel projelerimi hem de mühendislik, yazılım ve Ar-Ge alanındaki bilgi birikimimi sistematik şekilde paylaşıyorum.
+Merhaba, ben **Emre Akgün**. Hacettepe Üniversitesi Fizik Mühendisliği 3. sınıf öğrencisiyim ve aynı zamanda **FCP Marine**’de Proje Uzman Yardımcısı olarak çalışıyorum.
 
-## 🚀 **Uzmanlık Alanlarım:**
-- Yüzer yapı tasarımı ve mühendislik hesaplamaları
-- Python tabanlı yazılım geliştirme
-- CAD tabanlı modelleme ve teknik çizim (SolidWorks, SketchUp)
-- React ile platform-bağımsız web uygulamaları
+Bu siteyi aslında biraz kendime not olsun diye kurdum. Ezberim hiç iyi değil, sürekli unutuyorum. Öğrendiğim şeyleri derli toplu bir yerde tutmak istedim. Sonra dedim ki, madem bu kadar uğraşıyorum, belki başkalarına da faydası olur.
 
-## 🧠 **Ne Sunuyorum?**
-Bu site bir belge arşivi olmanın ötesinde, benim mühendislik vizyonumu ve pratik çözümlerimi yansıtan bir bilgi bankasıdır. Kendi geliştirdiğim projeler (örneğin **MarineMath**), notlar, kaynaklar ve teknik dokümanlar üzerinden öğrenmeye ve paylaşmaya açık bir alan oluşturuyorum.
+## 🧰 Neler Bulabilirsin?
+Burada;
+- Kendi yazdığım kodları,
+- Üzerinde çalıştığım mühendislik projelerini,
+- Python, CAD, React gibi araçlarla ilgili öğrendiklerimi,
+- Ve kafamda yer etmeyen ama lazım olacak tüm notları bulabilirsin.
 
-## 💡 **Hedefim:**
-Kısa vadede farklı alanlarda deneyim kazanarak kendimi geliştirmek, uzun vadede ise savunma sanayi ve inşaat mühendisliği gibi stratejik sektörlerde yüksek ölçekli projelerde yer almak. R&D odaklı yaklaşımımla teknoloji üretiminde katkı sağlamayı amaçlıyorum.
+## 🛠️ Uğraştığım Şeyler
+- Yüzer yapı mühendisliği ve hesaplamaları  
+- Python ile yazılım geliştirme  
+- SolidWorks & SketchUp gibi CAD araçları  
+- Web tarafında ERP sistemleri  
+- Ve bol bol Ar-Ge...
 
-## 📩 **İletişim ve Bağlantılar**
-- Kişisel e-mail adresim: emreakgun2003@gmail.com
-- Şirket e-mail adresim: emre@fcpmarine.com.tr
-- Bu dokümantasyonun açık kaynak kodları: [Github Repo](github.com/emreakguncloud/emre-docs)
+## 🎯 Hedefim Neydi ki?
+Kısa vadede "unutmamak", uzun vadede ise bu alanlarda kendimi geliştirip büyük, anlamlı projelerde yer almak. Savunma sanayi, inşaat, deniz teknolojileri gibi alanlar beni heyecanlandırıyor. Ar-Ge’ye merakım büyük çünkü üretmeyi seviyorum.
+
+## 📬 İletişim
+- Kişisel e-posta: emreakgun2003@gmail.com  
+- İş e-posta: emre@fcpmarine.com.tr  
+- Kodlar, kaynaklar: [GitHub Repo](https://github.com/emreakguncloud/emre-docs)
+
 ---
-##  **Teşekkürler**
-Bu site zamanla büyüyen, gelişen ve derinleşen bir bilgi haritasıdır. Ziyaret ettiğiniz için teşekkür ederim.
 
-**– Emre Akgün**
+## 🙏 Teşekkürler
+Bu site biraz kendime konuştuğum, biraz da paylaşmak istediğim şeyleri topladığım bir alan. Uğradıysan ne mutlu. Belki bir not, bir satır kod sana da denk gelir.
+
+**– Emre**

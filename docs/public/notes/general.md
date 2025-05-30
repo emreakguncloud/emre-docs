@@ -4,7 +4,7 @@
 
 - [x] Optimizasyon Minimizasyon
 - [ ] Veri İşleme
-- [ ] Regresyon
-- [ ] İnterpolasyon
+- [x] Regresyon
+- [x] İnterpolasyon
 
 Tarih 30.05.2025
