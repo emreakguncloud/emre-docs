@@ -754,6 +754,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="python/graph/graph.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Grafik Oluşturma
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -890,23 +913,33 @@ Gelecekte bir gün bunları neden yaptığımı unutursam, kendime selam olsun: 
 <ul>
 <li><strong>Alt Yapı</strong>: <a href="https://www.mkdocs.org/">MkDocs</a></li>
 <li><strong>Tema</strong>: <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></li>
-<li><strong>Versiyon Kontrolü</strong>: Git + Private GitHub Repo</li>
+<li><strong>Versiyon Kontrolü</strong>: GitHub</li>
 <li><strong>Editör</strong>: Visual Studio Code</li>
-<li><strong>Lokal Yayın</strong>: <code>python -m mkdocs serve</code></li>
-<li><strong>Canlı Yayın (Opsiyonel)</strong>: GitHub Pages (gh-deploy)</li>
+<li><strong>Lokal Yayın</strong>: Gizli dosyalarla birlikte tüm arşive erişim</li>
+<li><strong>Canlı Yayın (Opsiyonel)</strong>: GitHub Pages (gh-deploy) ile sıırlı erişim</li>
+<li><strong>Bulut Sistemi</strong>: GitHub Repository ile ekstra evrak yönetimi</li>
 </ul>
 <hr />
 <h2 id="ornek-klasor-yaps">📁 Örnek Klasör Yapısı<a class="headerlink" href="#ornek-klasor-yaps" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>docs/
-├── index.md
-├── about.md
-├── references.md
-├── notes/
-│ └── 00-setup-guide.md ← bu dosya
-├── projects/
-│ └── marinemath/
-└── knowledge-base/
-└── python/
+├── index.md                          ← Ana Sayfa
+├── public/
+│   ├── about.md                      ← Hakkımda
+│   ├── references.md                 ← Referanslar
+│   ├── notes/                        ← Genel Notlar (kişisel, gelişim süreci)
+│   │   └── index.md
+│   ├── projects/                     ← Açık Projeler
+│   │   └── index.md
+│   └── knowledge-base/              ← Bilgi Bankası (rehber, teknik içerik)
+│       ├── 00-setup-guide.md        ← Kullanım Rehberi
+│       └── python/
+│           └── numerical_analysis/
+│               └── numerical_analysis_modelleme.md
+├── private/
+│   ├── gizli.md                     ← Gizli Not
+│   └── projects/
+│       └── marinemath/
+│           └── index.md            ← MarineMath özel proje sayfası
 </code></pre></div>
 <h2 id="yeni-sayfa-ve-menu-ekleme-rehberi">📌 Yeni Sayfa ve Menü Ekleme Rehberi<a class="headerlink" href="#yeni-sayfa-ve-menu-ekleme-rehberi" title="Permanent link">&para;</a></h2>
 <p>Aşağıdaki adımları takip ederek yeni içerikler ekleyebilirim:</p>
