@@ -255,4 +255,4 @@ plt.show()
 
 ## 📎 Appendix
 
-- [Interpolasyon ve Regresyon HTML](Interpolasyon-ve-Regresyon.html)
+- [Interpolasyon ve Regresyon HTML](Interpolasyon-ve-Regresyonn.html)
