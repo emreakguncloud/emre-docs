@@ -14,9 +14,10 @@ Bu site bir belge arşivi olmanın ötesinde, benim mühendislik vizyonumu ve pr
 ## 💡 **Hedefim:**
 Kısa vadede farklı alanlarda deneyim kazanarak kendimi geliştirmek, uzun vadede ise savunma sanayi ve inşaat mühendisliği gibi stratejik sektörlerde yüksek ölçekli projelerde yer almak. R&D odaklı yaklaşımımla teknoloji üretiminde katkı sağlamayı amaçlıyorum.
 
-## 📩 **İletişim**
+## 📩 **İletişim ve Bağlantılar**
 - Kişisel e-mail adresim: emreakgun2003@gmail.com
 - Şirket e-mail adresim: emre@fcpmarine.com.tr
+- Bu dokümantasyonun açık kaynak kodları: [Github Repo](github.com/emreakguncloud/emre-docs)
 ---
 ##  **Teşekkürler**
 Bu site zamanla büyüyen, gelişen ve derinleşen bir bilgi haritasıdır. Ziyaret ettiğiniz için teşekkür ederim.

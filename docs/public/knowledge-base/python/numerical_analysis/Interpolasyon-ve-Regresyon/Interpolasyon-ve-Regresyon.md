@@ -1,7 +1,7 @@
 
 # 🎯 İnterpolasyon ve Regresyon Yöntemleri Rehberi
 
-Bu rehberde, interpolasyon ve regresyon türlerinin yaygın yöntemleri incelendi ihtiyaca uygun şablon kullanımı amacı güdülerek tasarlandı.
+Bu rehber, interpolasyon ve regresyon türlerinin yaygın yöntemlerini inceleyerek; ihtiyaca uygun şablonların doğru kullanımını amaçlayacak şekilde tasarlanmıştır.
 
 Önce şu notu okumanı öneririm → [Bkz Sayısal Analiz Kavramları](../../../../notes/sayısal-analiz-kavramları.md)
 
