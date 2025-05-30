@@ -52,14 +52,14 @@ markdown_extensions:
 nav:
   - Ana Sayfa: index.md
   - Projeler:
-      - Örnek Proje: projects/index.md
+      - Proje Örnek: projects/index.md
   - Bilgi Bankası:
       - Kullanım Rehberi: knowledge-base/00-setup-guide.md
       - Python:
-          - Sayısal Analiz:
+          - Sayısal Analiz: 
               - Modelleme ve Hata Hesaplama: knowledge-base/python/numerical_analysis/numerical_analysis_modelleme.md
           - Grafik Oluşturma: knowledge-base/python/graph/graph.md
   - Notlar:
-      - Genel Not: \notes\general.md
+      - Genel Not: notes/general.md
       - Sayısal Analiz: notes/sayısal-analiz-kavramları.md
   - Kaynaklar: references.md
