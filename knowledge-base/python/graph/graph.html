@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://emreakguncloud.github.io/emre-docs/knowledge-base/python/graph/graph.html">
       
       
-        <link rel="prev" href="../numerical_analysis/numerical_analysis_modelleme.html">
+        <link rel="prev" href="../numerical_analysis/Interpolasyon-ve-Regresyon/Interpolasyon-ve-Regresyon.html">
       
       
         <link rel="next" href="../../../notes/general.html">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Grafik Oluşturma - Emre Akgün Dökümantasyon</title>
+        <title>Temel Grafikler - Emre Akgün Dökümantasyon</title>
       
     
     
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Grafik Oluşturma
+              Temel Grafikler
             
           </span>
         </div>
@@ -600,12 +600,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../numerical_analysis/numerical_analysis_modelleme.html" class="md-nav__link">
+      <a href="../numerical_analysis/optimizasyon-minimizasyon/optimizasyon-minimizasyon.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Modelleme ve Hata Hesaplama
+    Optimizasyon/Minimizasyon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../numerical_analysis/Interpolasyon-ve-Regresyon/Interpolasyon-ve-Regresyon.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    İnterpolasyon ve Regresyon
     
   </span>
   
@@ -632,6 +655,51 @@
   
   
   
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Grafik Oluşturma
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Grafik Oluşturma
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
     <li class="md-nav__item md-nav__item--active">
       
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
@@ -645,7 +713,7 @@
   
   
   <span class="md-ellipsis">
-    Grafik Oluşturma
+    Temel Grafikler
     
   </span>
   
@@ -658,7 +726,7 @@
   
   
   <span class="md-ellipsis">
-    Grafik Oluşturma
+    Temel Grafikler
     
   </span>
   
@@ -728,6 +796,14 @@
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -946,6 +1022,14 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </code></pre></div>
 <p><img alt="Seaborn Scatter" src="seaborn-dot.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;total_bill&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;sex&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Günlere Göre Hesaplar&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;boxplot_tips.png&quot;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+<p><img alt="Seaborn Candle" src="seaborn-candle.png" /></p>
 <hr />
 <h2 id="4-3d-yuzey-grafigi">4️⃣ 3D Yüzey Grafiği<a class="headerlink" href="#4-3d-yuzey-grafigi" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
