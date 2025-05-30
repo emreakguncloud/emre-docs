@@ -106,4 +106,4 @@ Bu çalışma, temel modelleme teknikleriyle sayısal verilerin analiz edilmesi 
 ## 📎 Appendix
 
 - [Veri Seti (CSV)](modellemevehata-data.csv)
-- [HTML Raporu](Modellemevehata.html)
+- [HTML Raporu](optimizasyon-minimizasyon.html)

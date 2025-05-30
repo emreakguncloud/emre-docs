@@ -53,8 +53,10 @@ nav:
       - Kullanım Rehberi: public/knowledge-base/00-setup-guide.md
       - Python:
           - Sayısal Analiz: 
-              - Modelleme ve Hata Hesaplama: public/knowledge-base/python/numerical_analysis/numerical_analysis_modelleme.md
-          - Grafik Oluşturma: public\knowledge-base\python\graph\graph.md
+              - Optimizasyon/Minimizasyon: public/knowledge-base/python/numerical_analysis/optimizasyon-minimizasyon/optimizasyon-minimizasyon.md
+              - İnterpolasyon ve Regresyon: public/knowledge-base/python/numerical_analysis/Interpolasyon-ve-Regresyon/Interpolasyon-ve-Regresyon.md
+          - Grafik Oluşturma: 
+              - Temel Grafikler: public\knowledge-base\python\graph\graph.md
   - Notlar:
       - Genel Not: public\notes\general.md
       - Sayısal Analiz: public/notes/sayısal-analiz-kavramları.md
