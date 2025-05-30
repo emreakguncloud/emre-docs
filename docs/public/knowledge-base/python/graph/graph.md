@@ -78,6 +78,17 @@ plt.show()
 
 ![Seaborn Scatter](seaborn-dot.png)
 
+```python
+plt.figure(figsize=(8, 5))
+sns.boxplot(data=df, x="day", y="total_bill", hue="sex")
+plt.title("Günlere Göre Hesaplar")
+plt.tight_layout()
+plt.savefig("boxplot_tips.png", dpi=300)
+plt.show()
+```
+
+![Seaborn Candle](seaborn-candle.png)
+
 ---
 
 ## 4️⃣ 3D Yüzey Grafiği
