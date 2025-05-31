@@ -8,26 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://emreakguncloud.github.io/emre-docs/index.html">
+        <link rel="canonical" href="https://emreakguncloud.github.io/emre-docs/projects/MarineMath-CustomTkinter-Desktop-App/architecture.html">
       
       
+        <link rel="prev" href="ui-usage.html">
       
-        <link rel="next" href="projects/index.html">
+      
+        <link rel="next" href="database.html">
       
       
-      <link rel="icon" href="images/favicon.ico">
+      <link rel="icon" href="../../images/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Emre Akgün Dökümantasyon</title>
+        <title>Uygulamanın Yapısı - Emre Akgün Dökümantasyon</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#emre-akgun-dokumantasyonuna-hos-geldiniz" class="md-skip">
+        <a href="#marinemath-desktop-yazlm-mimarisi" class="md-skip">
           Skip to content
         </a>
       
@@ -86,9 +88,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="index.html" title="Emre Akgün Dökümantasyon" class="md-header__button md-logo" aria-label="Emre Akgün Dökümantasyon" data-md-component="logo">
+    <a href="../../index.html" title="Emre Akgün Dökümantasyon" class="md-header__button md-logo" aria-label="Emre Akgün Dökümantasyon" data-md-component="logo">
       
-  <img src="images/mercedes-benz-1-logo-png-transparent.png" alt="logo">
+  <img src="../../images/mercedes-benz-1-logo-png-transparent.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -105,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ana Sayfa
+              Uygulamanın Yapısı
             
           </span>
         </div>
@@ -204,11 +206,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="index.html" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../index.html" class="md-tabs__link">
         
   
   
@@ -225,11 +225,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="projects/index.html" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../index.html" class="md-tabs__link">
           
   
   
@@ -249,7 +251,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="knowledge-base/00-setup-guide.html" class="md-tabs__link">
+        <a href="../../knowledge-base/00-setup-guide.html" class="md-tabs__link">
           
   
   
@@ -269,7 +271,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="notes/general.html" class="md-tabs__link">
+        <a href="../../notes/general.html" class="md-tabs__link">
           
   
   
@@ -287,7 +289,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="references.html" class="md-tabs__link">
+      <a href="../../references.html" class="md-tabs__link">
         
   
   
@@ -324,9 +326,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="index.html" title="Emre Akgün Dökümantasyon" class="md-nav__button md-logo" aria-label="Emre Akgün Dökümantasyon" data-md-component="logo">
+    <a href="../../index.html" title="Emre Akgün Dökümantasyon" class="md-nav__button md-logo" aria-label="Emre Akgün Dökümantasyon" data-md-component="logo">
       
-  <img src="images/mercedes-benz-1-logo-png-transparent.png" alt="logo">
+  <img src="../../images/mercedes-benz-1-logo-png-transparent.png" alt="logo">
 
     </a>
     Emre Akgün Dökümantasyon
@@ -338,32 +340,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Ana Sayfa
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
         
   
   
@@ -374,71 +354,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#neler-bulabilirsin" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧰 Neler Bulabilirsin?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ugrastgm-seyler" class="md-nav__link">
-    <span class="md-ellipsis">
-      🛠️ Uğraştığım Şeyler
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hedefim-neydi-ki" class="md-nav__link">
-    <span class="md-ellipsis">
-      🎯 Hedefim Neydi ki?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#iletisim" class="md-nav__link">
-    <span class="md-ellipsis">
-      📬 İletişim
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tesekkurler" class="md-nav__link">
-    <span class="md-ellipsis">
-      🙏 Teşekkürler
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -447,26 +362,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
@@ -479,7 +399,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Projeler
@@ -493,7 +413,7 @@
   
   
     <li class="md-nav__item">
-      <a href="projects/index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -513,26 +433,31 @@
                 
   
   
+    
   
   
+  
     
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
         
           
-          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
             
   
   
@@ -545,7 +470,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             MarineMath (CustomTkinter Desktop App)
@@ -559,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="projects/MarineMath-CustomTkinter-Desktop-App/index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -582,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="projects/MarineMath-CustomTkinter-Desktop-App/ui-usage.html" class="md-nav__link">
+      <a href="ui-usage.html" class="md-nav__link">
         
   
   
@@ -602,10 +527,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="projects/MarineMath-CustomTkinter-Desktop-App/architecture.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Uygulamanın Yapısı
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="architecture.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -616,6 +563,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uygulama-aks-user-journey" class="md-nav__link">
+    <span class="md-ellipsis">
+      📱 Uygulama Akışı (User Journey)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moduler-yap-module-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Modüler Yapı (Module Responsibilities)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#veritaban-yaps-ve-aks" class="md-nav__link">
+    <span class="md-ellipsis">
+      💾 Veritabanı Yapısı ve Akışı
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#katmanl-mimari-modified-mvc" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧱 Katmanlı Mimari (Modified MVC)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dosya-ve-klasor-yaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      📁 Dosya ve Klasör Yapısı
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -628,7 +640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="projects/MarineMath-CustomTkinter-Desktop-App/database.html" class="md-nav__link">
+      <a href="database.html" class="md-nav__link">
         
   
   
@@ -709,7 +721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="knowledge-base/00-setup-guide.html" class="md-nav__link">
+      <a href="../../knowledge-base/00-setup-guide.html" class="md-nav__link">
         
   
   
@@ -818,7 +830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="knowledge-base/python/numerical_analysis/optimizasyon-minimizasyon/optimizasyon-minimizasyon.html" class="md-nav__link">
+      <a href="../../knowledge-base/python/numerical_analysis/optimizasyon-minimizasyon/optimizasyon-minimizasyon.html" class="md-nav__link">
         
   
   
@@ -841,7 +853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="knowledge-base/python/numerical_analysis/Interpolasyon-ve-Regresyon/Interpolasyon-ve-Regresyon.html" class="md-nav__link">
+      <a href="../../knowledge-base/python/numerical_analysis/Interpolasyon-ve-Regresyon/Interpolasyon-ve-Regresyon.html" class="md-nav__link">
         
   
   
@@ -915,7 +927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="knowledge-base/python/graph/graph.html" class="md-nav__link">
+      <a href="../../knowledge-base/python/graph/graph.html" class="md-nav__link">
         
   
   
@@ -1004,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/general.html" class="md-nav__link">
+      <a href="../../notes/general.html" class="md-nav__link">
         
   
   
@@ -1027,7 +1039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="notes/say%C4%B1sal-analiz-kavramlar%C4%B1.html" class="md-nav__link">
+      <a href="../../notes/say%C4%B1sal-analiz-kavramlar%C4%B1.html" class="md-nav__link">
         
   
   
@@ -1057,7 +1069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="references.html" class="md-nav__link">
+      <a href="../../references.html" class="md-nav__link">
         
   
   
@@ -1088,35 +1100,179 @@
 
 
 
-<h1 id="emre-akgun-dokumantasyonuna-hos-geldiniz">Emre Akgün Dökümantasyonuna Hoş Geldiniz<a class="headerlink" href="#emre-akgun-dokumantasyonuna-hos-geldiniz" title="Permanent link">&para;</a></h1>
-<p>Merhaba, ben <strong>Emre Akgün</strong>. Hacettepe Üniversitesi Fizik Mühendisliği 3. sınıf öğrencisiyim ve aynı zamanda <strong>FCP Marine</strong>’de Proje Uzman Yardımcısı olarak çalışıyorum.</p>
-<p>Bu siteyi aslında biraz kendime not olsun diye kurdum. Ezberim hiç iyi değil, sürekli unutuyorum. Öğrendiğim şeyleri derli toplu bir yerde tutmak istedim. Sonra dedim ki, madem bu kadar uğraşıyorum, belki başkalarına da faydası olur.</p>
-<h2 id="neler-bulabilirsin">🧰 Neler Bulabilirsin?<a class="headerlink" href="#neler-bulabilirsin" title="Permanent link">&para;</a></h2>
-<p>Burada;
-- Kendi yazdığım kodları,
-- Üzerinde çalıştığım mühendislik projelerini,
-- Python, CAD, React gibi araçlarla ilgili öğrendiklerimi,
-- Ve kafamda yer etmeyen ama lazım olacak tüm notları bulabilirsin.</p>
-<h2 id="ugrastgm-seyler">🛠️ Uğraştığım Şeyler<a class="headerlink" href="#ugrastgm-seyler" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Yüzer yapı mühendisliği ve hesaplamaları  </li>
-<li>Python ile yazılım geliştirme  </li>
-<li>SolidWorks &amp; SketchUp gibi CAD araçları  </li>
-<li>Web tarafında ERP sistemleri  </li>
-<li>Ve bol bol Ar-Ge...</li>
-</ul>
-<h2 id="hedefim-neydi-ki">🎯 Hedefim Neydi ki?<a class="headerlink" href="#hedefim-neydi-ki" title="Permanent link">&para;</a></h2>
-<p>Kısa vadede "unutmamak", uzun vadede ise bu alanlarda kendimi geliştirip büyük, anlamlı projelerde yer almak. Savunma sanayi, inşaat, deniz teknolojileri gibi alanlar beni heyecanlandırıyor. Ar-Ge’ye merakım büyük çünkü üretmeyi seviyorum.</p>
-<h2 id="iletisim">📬 İletişim<a class="headerlink" href="#iletisim" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Kişisel e-posta: emreakgun2003@gmail.com  </li>
-<li>İş e-posta: emre@fcpmarine.com.tr  </li>
-<li>Bu dokümantasyonun açık kaynak kodları: <a href="https://github.com/emreakguncloud/emre-docs">GitHub Repo</a></li>
-</ul>
+<h1 id="marinemath-desktop-yazlm-mimarisi">🏗️ MarineMath Desktop – Yazılım Mimarisi<a class="headerlink" href="#marinemath-desktop-yazlm-mimarisi" title="Permanent link">&para;</a></h1>
+<h2 id="uygulama-aks-user-journey">📱 Uygulama Akışı (User Journey)<a class="headerlink" href="#uygulama-aks-user-journey" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>BAŞLANGIÇ
+   ↓
+Ana Sayfa (start_page.py)
+   ├── &quot;Metal İskele Hesaplama&quot; → FreeBoardHesaplama.py
+   ├── &quot;Beton İskele Hesaplama&quot; → BetonFreeboardHesaplama.py
+   ├── &quot;Tork Denge Hesaplama&quot; → DengeHesaplama.py
+   └── &quot;Hesaplama Geçmişi&quot; → history_page.py
+         ↓
+Hesaplama Sayfası
+   ├── Form Girişi
+   ├── Parametre Seçimi
+   ├── Hesaplama
+   ├── Sonuç Gösterimi
+   └── Otomatik Kayıt
+         ↓
+SQLite Veritabanına Kayıt → Geri Dön veya Geçmişi Görüntüle
+</code></pre></div>
 <hr />
-<h2 id="tesekkurler">🙏 Teşekkürler<a class="headerlink" href="#tesekkurler" title="Permanent link">&para;</a></h2>
-<p>Bu site biraz kendime konuştuğum, biraz da paylaşmak istediğim şeyleri topladığım bir alan. Uğradıysan ne mutlu. Belki bir not, bir satır kod sana da denk gelir.</p>
-<p><strong>– Emre</strong></p>
+<h2 id="moduler-yap-module-responsibilities">🧩 Modüler Yapı (Module Responsibilities)<a class="headerlink" href="#moduler-yap-module-responsibilities" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Dosya</th>
+<th>Görev</th>
+<th>Sorumluluk Alanı</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>main.py</code></td>
+<td>Giriş Noktası</td>
+<td>Uygulamayı başlatır</td>
+</tr>
+<tr>
+<td><code>start_page.py</code></td>
+<td>Ana Menü</td>
+<td>Navigasyon merkezi</td>
+</tr>
+<tr>
+<td><code>FreeBoardHesaplama.py</code></td>
+<td>Hesaplama</td>
+<td>Metal iskele freeboard analizleri</td>
+</tr>
+<tr>
+<td><code>BetonFreeboardHesaplama.py</code></td>
+<td>Hesaplama</td>
+<td>Beton iskele hesaplamaları</td>
+</tr>
+<tr>
+<td><code>DengeHesaplama.py</code></td>
+<td>Hesaplama</td>
+<td>Tork denge analizleri</td>
+</tr>
+<tr>
+<td><code>history_page.py</code></td>
+<td>Görüntüleme</td>
+<td>Hesap geçmişini gösterir</td>
+</tr>
+<tr>
+<td><code>database_manager.py</code></td>
+<td>Veri Katmanı</td>
+<td>Veritabanı yönetimi, CRUD işlemleri</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Örnek Kullanım</strong></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">start_page</span><span class="w"> </span><span class="kn">import</span> <span class="n">start_page</span>
+
+<span class="n">start_page</span><span class="p">()</span>  <span class="c1"># Ana sayfa başlatılır</span>
+</code></pre></div>
+<hr />
+<h2 id="veritaban-yaps-ve-aks">💾 Veritabanı Yapısı ve Akışı<a class="headerlink" href="#veritaban-yaps-ve-aks" title="Permanent link">&para;</a></h2>
+<p><strong>Tablolar</strong></p>
+<ul>
+<li>
+<p>table1 – Beton İskele (18 parametre)</p>
+</li>
+<li>
+<p>table2 – Metal İskele (19 parametre)</p>
+</li>
+<li>
+<p>table3 – Tork Denge (6 parametre)</p>
+</li>
+</ul>
+<p><strong>Veri Akışı</strong></p>
+<div class="highlight"><pre><span></span><code>Form Girişi → Hesaplama → Sonuç → Otomatik Kayıt → SQLite DB
+                                          ↓
+                               get_all_calculations_*() → Geçmiş Sayfası
+</code></pre></div>
+<p><strong>Kayıt Örneği</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">save_calculation_concrete</span><span class="p">(</span><span class="n">calculation</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;your_database.db&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+        <span class="n">cursor</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+        <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO table1 (...) VALUES (?, ?, ..., ?)&quot;</span><span class="p">,</span> <span class="n">calculation</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+</code></pre></div>
+<hr />
+<h2 id="katmanl-mimari-modified-mvc">🧱 Katmanlı Mimari (Modified MVC)<a class="headerlink" href="#katmanl-mimari-modified-mvc" title="Permanent link">&para;</a></h2>
+<p>👁️ <strong>View Layer</strong>
+- start_page.py – Ana menü</p>
+<ul>
+<li>
+<p>FreeBoardHesaplama.py – Metal hesaplama arayüzü</p>
+</li>
+<li>
+<p>BetonFreeboardHesaplama.py – Beton hesaplama arayüzü</p>
+</li>
+<li>
+<p>DengeHesaplama.py – Denge hesaplama arayüzü</p>
+</li>
+<li>
+<p>history_page.py – Geçmiş görüntüleme</p>
+</li>
+</ul>
+<p>⚙️ <strong>Controller Layer</strong>
+- calculate_*() fonksiyonları – Mühendislik hesaplama algoritmaları</p>
+<p>💽 <strong>Model Layer</strong>
+- database_manager.py – Tüm veritabanı işlemleri</p>
+<ul>
+<li>Mimari Özellikler</li>
+<li>
+<p>View &amp; Controller iç içe entegre</p>
+</li>
+<li>
+<p>Ortak model sınıfları</p>
+</li>
+<li>
+<p>Event-driven yaklaşım (buton tıklama → hesaplama → kayıt)</p>
+</li>
+<li>
+<p>Tek sorumluluk prensibi (SRP)</p>
+</li>
+</ul>
+<h2 id="dosya-ve-klasor-yaps">📁 Dosya ve Klasör Yapısı<a class="headerlink" href="#dosya-ve-klasor-yaps" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>MarineMathDesktop/
+│
+├── 🚀 CORE APPLICATION
+│   ├── main.py
+│   ├── start_page.py
+│   └── database_manager.py
+│
+├── 📊 CALCULATION MODULES
+│   ├── FreeBoardHesaplama.py
+│   ├── BetonFreeboardHesaplama.py
+│   └── DengeHesaplama.py
+│
+├── 📝 DISPLAY MODULES
+│   └── history_page.py
+│
+├── 💾 DATA STORAGE
+│   └── your_database.db
+│
+├── 🎨 DESIGN ASSETS
+│   ├── Tasarım/
+│   │   ├── Untitled-1.psd
+│   │   └── Ana Sayfa.jpg
+│   └── pngwing_com_A7S_icon.ico
+│
+├── 📐 ENGINEERING DOCUMENTS
+│   └── Hesaplamalar/
+│       ├── Draw1.pdf
+│       └── Draw1.SLDDRW
+│
+└── ⚙️ DEVELOPMENT
+    ├── .git/
+    ├── __pycache__/
+    └── .gitattributes
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p>Bu mimari yapı, modülerlik, sürdürülebilirlik ve bakım kolaylığı ilkelerine uygun olarak geliştirilmiştir. Her bileşen tek sorumluluk taşır ve yeniden kullanılabilir niteliktedir.</p>
+</div>
 
 
 
@@ -1171,10 +1327,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "toc.integrate", "navigation.instant", "navigation.tracking", "navigation.sections", "search.suggest", "search.highlight", "navigation.top", "content.code.copy"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "toc.integrate", "navigation.instant", "navigation.tracking", "navigation.sections", "search.suggest", "search.highlight", "navigation.top", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

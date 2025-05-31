@@ -1,0 +1,1509 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://emreakguncloud.github.io/emre-docs/projects/MarineMath-CustomTkinter-Desktop-App/database.html">
+      
+      
+        <link rel="prev" href="architecture.html">
+      
+      
+        <link rel="next" href="../../knowledge-base/00-setup-guide.html">
+      
+      
+      <link rel="icon" href="../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Database - Emre Akgün Dökümantasyon</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#marinemathdesktop-veritaban-mimarisi" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="Emre Akgün Dökümantasyon" class="md-header__button md-logo" aria-label="Emre Akgün Dökümantasyon" data-md-component="logo">
+      
+  <img src="../../images/mercedes-benz-1-logo-png-transparent.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Emre Akgün Dökümantasyon
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Database
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Karanlık moda geç"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Karanlık moda geç" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 2c-1.05 0-2.05.16-3 .46 4.06 1.27 7 5.04 7 9.54s-2.94 8.27-7 9.54c.95.3 1.95.46 3 .46a10 10 0 0 0 10-10A10 10 0 0 0 9 2"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Aydınlık moda geç"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Aydınlık moda geç" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ana Sayfa
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../index.html" class="md-tabs__link">
+          
+  
+  
+  Projeler
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../knowledge-base/00-setup-guide.html" class="md-tabs__link">
+          
+  
+  
+  Bilgi Bankası
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../notes/general.html" class="md-tabs__link">
+          
+  
+  
+  Notlar
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../references.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kaynaklar
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="Emre Akgün Dökümantasyon" class="md-nav__button md-logo" aria-label="Emre Akgün Dökümantasyon" data-md-component="logo">
+      
+  <img src="../../images/mercedes-benz-1-logo-png-transparent.png" alt="logo">
+
+    </a>
+    Emre Akgün Dökümantasyon
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ana Sayfa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Projeler
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Projeler
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Projerim Hakkında
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    MarineMath (CustomTkinter Desktop App)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            MarineMath (CustomTkinter Desktop App)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    İndex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ui-usage.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UI ve Kullanım
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="architecture.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Uygulamanın Yapısı
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Database
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="database.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-veritaban-dosyas" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗃️ 1. Veritabanı Dosyası
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tablo-says-ve-isimleri" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 2. Tablo Sayısı ve İsimleri
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-tablo-yaplar" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ 3. Tablo Yapıları
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ 3. Tablo Yapıları">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table1-beton-iskele-19-sutun" class="md-nav__link">
+    <span class="md-ellipsis">
+      📋 Table1 (Beton İskele) - 19 Sütun
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table2-metal-iskele-20-sutun" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Table2 (Metal İskele) - 20 Sütun
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table3-tork-denge-7-sutun" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚖️ Table3 (Tork Denge) - 7 Sütun
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-veri-tipleri-ve-formatlar" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔢 4. Veri Tipleri ve Formatlar
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-kayt-yontemi" class="md-nav__link">
+    <span class="md-ellipsis">
+      💾 5. Kayıt Yöntemi
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-crud-destegi" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 6. CRUD Desteği
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-veritaban-baslatma" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚀 7. Veritabanı Başlatma
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bilgi Bankası
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bilgi Bankası
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge-base/00-setup-guide.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kullanım Rehberi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Sayısal Analiz
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Sayısal Analiz
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge-base/python/numerical_analysis/optimizasyon-minimizasyon/optimizasyon-minimizasyon.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Optimizasyon/Minimizasyon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge-base/python/numerical_analysis/Interpolasyon-ve-Regresyon/Interpolasyon-ve-Regresyon.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    İnterpolasyon ve Regresyon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Grafik Oluşturma
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Grafik Oluşturma
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../knowledge-base/python/graph/graph.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Temel Grafikler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Notlar
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Notlar
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/general.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    İlerleme Notu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notes/say%C4%B1sal-analiz-kavramlar%C4%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sayısal Analiz
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../references.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kaynaklar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="marinemathdesktop-veritaban-mimarisi">💾 MarineMathDesktop - Veritabanı Mimarisi<a class="headerlink" href="#marinemathdesktop-veritaban-mimarisi" title="Permanent link">&para;</a></h1>
+<h2 id="1-veritaban-dosyas">🗃️ <strong>1. Veritabanı Dosyası</strong><a class="headerlink" href="#1-veritaban-dosyas" title="Permanent link">&para;</a></h2>
+<p><strong>Dosya Adı:</strong> <code>your_database.db</code>
+- <strong>Format</strong>: SQLite3 (.db uzantılı)
+- <strong>Konum</strong>: Uygulama ana dizini</p>
+<div class="highlight"><pre><span></span><code><span class="k">with</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;your_database.db&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+</code></pre></div>
+<h2 id="2-tablo-says-ve-isimleri">📊 <strong>2. Tablo Sayısı ve İsimleri</strong><a class="headerlink" href="#2-tablo-says-ve-isimleri" title="Permanent link">&para;</a></h2>
+<p><strong>Toplam 3 Tablo:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Tablo Adı</strong></th>
+<th><strong>Hesaplama Türü</strong></th>
+<th><strong>Sütun Sayısı</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>table1</code></td>
+<td>Beton İskele Hesaplamaları</td>
+<td>19 sütun</td>
+</tr>
+<tr>
+<td><code>table2</code></td>
+<td>Metal İskele Hesaplamaları</td>
+<td>20 sütun</td>
+</tr>
+<tr>
+<td><code>table3</code></td>
+<td>Tork Denge Hesaplamaları</td>
+<td>7 sütun</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-tablo-yaplar">🏗️ <strong>3. Tablo Yapıları</strong><a class="headerlink" href="#3-tablo-yaplar" title="Permanent link">&para;</a></h2>
+<h3 id="table1-beton-iskele-19-sutun"><strong>📋 Table1 (Beton İskele) - 19 Sütun</strong><a class="headerlink" href="#table1-beton-iskele-19-sutun" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">table1</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTOINCREMENT</span><span class="p">,</span>
+<span class="w">    </span><span class="k">length</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">height</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">width</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">eps_length</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">eps_width</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">eps_height</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">is_colon</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+<span class="w">    </span><span class="n">is_bottom_closed</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+<span class="w">    </span><span class="n">colon_count</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+<span class="w">    </span><span class="n">vertical_colon</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+<span class="w">    </span><span class="n">vertical_colon_count</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+<span class="w">    </span><span class="n">plus_weight</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">total_weight</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">freeboard</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">bend_bar_weight</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">straight_bars_weight</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">concrete_volume</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">wicker_area</span><span class="w"> </span><span class="nb">REAL</span>
+<span class="p">)</span>
+</code></pre></div>
+<p><strong>Örnek Sütunlar:</strong>
+- <code>length REAL</code> - İskele uzunluğu (metre)
+- <code>is_colon INTEGER</code> - Kolon varlığı (Boolean → 0/1)
+- <code>total_weight REAL</code> - Toplam ağırlık (kg)
+- <code>freeboard REAL</code> - Freeboard mesafesi (metre)</p>
+<h3 id="table2-metal-iskele-20-sutun"><strong>⚙️ Table2 (Metal İskele) - 20 Sütun</strong><a class="headerlink" href="#table2-metal-iskele-20-sutun" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">table2</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTOINCREMENT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">iskele_uzunluk</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">iskele_genislik</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">iskele_yukseklik</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">steel_profile_length</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">steel_profile_length_2</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">sandik_sayisi</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+<span class="w">    </span><span class="n">sandik_uzunluk</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">sandik_genislik</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">sandik_yukseklik</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">ek_agirlik</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">profil_secimi</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">profil_secimi_2</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">u_profil_secimi</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">sac_levha_secimi</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">freeboard</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">weight</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">deck_count</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+<span class="w">    </span><span class="n">npu_length</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">sac_m2</span><span class="w"> </span><span class="nb">REAL</span>
+<span class="p">)</span>
+</code></pre></div>
+<p><strong>Örnek Sütunlar:</strong>
+- <code>profil_secimi TEXT</code> - Çelik profil seçimi (örn: "30x50x2.00 mm")
+- <code>sandik_sayisi INTEGER</code> - Sandık adedi
+- <code>ek_agirlik REAL</code> - Ek ağırlık (kg)
+- <code>sac_m2 REAL</code> - Sac levha alanı (m²)</p>
+<h3 id="table3-tork-denge-7-sutun"><strong>⚖️ Table3 (Tork Denge) - 7 Sütun</strong><a class="headerlink" href="#table3-tork-denge-7-sutun" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="n">table3</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTOINCREMENT</span><span class="p">,</span>
+<span class="w">    </span><span class="n">left_weights</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">left_distances</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">right_weights</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">right_distances</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">unknown_distance</span><span class="w"> </span><span class="nb">REAL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">unknown_weight</span><span class="w"> </span><span class="nb">REAL</span>
+<span class="p">)</span>
+</code></pre></div>
+<p><strong>Örnek Sütunlar:</strong>
+- <code>left_weights REAL</code> - Sol ağırlıklar (CSV format: "100,200,150")
+- <code>right_distances REAL</code> - Sağ mesafeler (CSV format: "1.5,3.5")
+- <code>unknown_weight REAL</code> - Bilinmeyen ağırlık (kg)
+- <code>unknown_distance REAL</code> - Bilinmeyen mesafe (metre)</p>
+<h2 id="4-veri-tipleri-ve-formatlar">🔢 <strong>4. Veri Tipleri ve Formatlar</strong><a class="headerlink" href="#4-veri-tipleri-ve-formatlar" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th><strong>SQLite Tipi</strong></th>
+<th><strong>Python Karşılığı</strong></th>
+<th><strong>Kullanım Alanı</strong></th>
+<th><strong>Örnek Değer</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>INTEGER</code></td>
+<td><code>int</code></td>
+<td>ID, sayılar, boolean</td>
+<td><code>1</code>, <code>5</code>, <code>0/1</code></td>
+</tr>
+<tr>
+<td><code>REAL</code></td>
+<td><code>float</code></td>
+<td>Ölçüler, ağırlıklar</td>
+<td><code>5.25</code>, <code>1247.83</code></td>
+</tr>
+<tr>
+<td><code>TEXT</code></td>
+<td><code>str</code></td>
+<td>Profil seçimleri, CSV</td>
+<td><code>"NPU 100"</code>, <code>"100,200"</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Boolean Handling:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Boolean değerler INTEGER olarak saklanır</span>
+<span class="n">is_colon</span> <span class="n">INTEGER</span><span class="p">,</span>           <span class="c1"># 0 = False, 1 = True</span>
+<span class="n">is_bottom_closed</span> <span class="n">INTEGER</span><span class="p">,</span>   <span class="c1"># 0 = False, 1 = True</span>
+<span class="n">vertical_colon</span> <span class="n">INTEGER</span><span class="p">,</span>     <span class="c1"># 0 = False, 1 = True</span>
+</code></pre></div></p>
+<p><strong>CSV Format (Table3):</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Liste verileri virgülle ayrılmış string olarak saklanır</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">balance_data</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span>  <span class="c1"># &quot;100,200,150&quot;</span>
+    <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">balance_data</span><span class="p">[</span><span class="mi">2</span><span class="p">])),</span>  <span class="c1"># &quot;2,3,4&quot;</span>
+    <span class="c1"># ...</span>
+<span class="p">)</span>
+</code></pre></div></p>
+<h2 id="5-kayt-yontemi">💾 <strong>5. Kayıt Yöntemi</strong><a class="headerlink" href="#5-kayt-yontemi" title="Permanent link">&para;</a></h2>
+<p><strong>Otomatik Kayıt Sistemi:</strong></p>
+<ul>
+<li>
+<p>✅ <strong>Hesaplama sonrası anında kayıt</strong></p>
+</li>
+<li>
+<p>✅ <strong>Her hesap modülünde <code>create_tables()</code> çağrılır</strong></p>
+</li>
+<li>
+<p>✅ <strong>Birincil anahtar</strong>: AUTO_INCREMENT ID (her tabloda)</p>
+</li>
+<li>
+<p>❌ <strong>Manuel kayıt butonu YOK</strong></p>
+</li>
+</ul>
+<p><strong>Kayıt Akışı:</strong>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">hesaplamafonk</span><span class="p">():</span>
+    <span class="c1"># 1. Hesaplama yap</span>
+    <span class="n">freeboard</span><span class="p">,</span> <span class="n">weight</span> <span class="o">=</span> <span class="n">calculate_freeboard</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+    <span class="c1"># 2. Tabloları oluştur (ilk çalışma için)</span>
+    <span class="n">create_tables</span><span class="p">()</span>
+
+    <span class="c1"># 3. Anında kaydet</span>
+    <span class="n">save_calculation_metal</span><span class="p">([</span><span class="kc">None</span><span class="p">,</span> <span class="n">uzunluk</span><span class="p">,</span> <span class="n">genislik</span><span class="p">,</span> <span class="o">...</span><span class="p">])</span>
+</code></pre></div></p>
+<p><strong>Primary Key Yapısı:</strong>
+<div class="highlight"><pre><span></span><code><span class="n">id</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="n">AUTOINCREMENT</span>
+</code></pre></div>
+- Her tabloda benzersiz ID
+- Otomatik artan
+- Geçmiş sayfasında referans için kullanılır</p>
+<h2 id="6-crud-destegi">🔄 <strong>6. CRUD Desteği</strong><a class="headerlink" href="#6-crud-destegi" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th><strong>İşlem</strong></th>
+<th><strong>Durum</strong></th>
+<th><strong>Fonksiyon</strong></th>
+<th><strong>Kullanım Yeri</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CREATE</strong></td>
+<td>✅ Tam</td>
+<td><code>save_calculation_*()</code></td>
+<td>Her hesaplama sonrası</td>
+</tr>
+<tr>
+<td><strong>READ</strong></td>
+<td>✅ Tam</td>
+<td><code>get_all_calculations_*()</code></td>
+<td>Geçmiş sayfası</td>
+</tr>
+<tr>
+<td><strong>UPDATE</strong></td>
+<td>❌ Yok</td>
+<td>-</td>
+<td>Desteklenmiyor</td>
+</tr>
+<tr>
+<td><strong>DELETE</strong></td>
+<td>✅ Kısmi</td>
+<td><code>confirm_and_delete()</code></td>
+<td>Geçmiş sayfasında</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read Operasyonları:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Tüm kayıtları çek</span>
+<span class="n">get_all_calculations_concrete</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">]</span>
+<span class="n">get_all_calculations_metal</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">]</span>
+<span class="n">get_all_calculations_balance</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">]</span>
+
+<span class="c1"># ID ile tekil kayıt</span>
+<span class="n">get_calculation_by_id</span><span class="p">(</span><span class="n">calc_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">table_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">]</span>
+</code></pre></div></p>
+<p><strong>Delete Operasyonu:</strong>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">confirm_and_delete</span><span class="p">(</span><span class="n">table_name</span><span class="p">):</span>
+    <span class="c1"># MessageBox ile onay al</span>
+    <span class="c1"># SQL DELETE çalıştır</span>
+    <span class="c1"># Listeyi yenile</span>
+</code></pre></div></p>
+<p><strong>UPDATE İşlemi:</strong>
+- ❌ <strong>Desteklenmiyor</strong>
+- ❌ <strong>Düzenleme özelliği yok</strong>
+- ✅ <strong>Read-only detail view</strong> (salt okunur detay görünümü)</p>
+<h2 id="7-veritaban-baslatma">🚀 <strong>7. Veritabanı Başlatma</strong><a class="headerlink" href="#7-veritaban-baslatma" title="Permanent link">&para;</a></h2>
+<p><strong>Schema Oluşturma:</strong>
+- ✅ <strong>Runtime'da oluşturulur</strong> (önceden değil)
+- ✅ <strong>Her modül çağrısında <code>create_tables()</code></strong>
+- ✅ <strong><code>CREATE TABLE IF NOT EXISTS</code></strong> pattern'i kullanır
+- ✅ <strong>İlk çalıştırmada otomatik setup</strong></p>
+<p><strong>Başlatma Noktaları:</strong>
+<div class="highlight"><pre><span></span><code><span class="c1"># Her hesaplama modülünde</span>
+<span class="n">create_tables</span><span class="p">()</span>  <span class="c1"># Tabloları kontrol et/oluştur</span>
+<span class="n">save_calculation_</span><span class="o">*</span><span class="p">()</span>  <span class="c1"># Veriyi kaydet</span>
+
+<span class="c1"># Geçmiş sayfasında</span>
+<span class="n">create_tables</span><span class="p">()</span>  <span class="c1"># Sayfa açılışında</span>
+</code></pre></div></p>
+<p><strong>Timing:</strong></p>
+<ol>
+<li>
+<p><strong>Uygulama başlatıldığında</strong>: Veritabanı yoksa oluşturulur</p>
+</li>
+<li>
+<p><strong>Her hesaplama öncesi</strong>: <code>create_tables()</code> çağrısı</p>
+</li>
+<li>
+<p><strong>Her modül geçişinde</strong>: Tablo varlığı garantisi</p>
+</li>
+</ol>
+<p><strong>Error Handling:</strong>
+<div class="highlight"><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO...&quot;</span><span class="p">,</span> <span class="n">calculation</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+<span class="k">except</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error saving calculation: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+<p><strong>Dosya Yönetimi:</strong></p>
+<ul>
+<li>
+<p>✅ <strong>Context manager</strong>: <code>with sqlite3.connect()</code></p>
+</li>
+<li>
+<p>✅ <strong>Otomatik connection close</strong></p>
+</li>
+<li>
+<p>✅ <strong>Thread-safe</strong> operasyonlar</p>
+</li>
+<li>
+<p>✅ <strong>Minimal locking</strong> (SQLite default)</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Not</p>
+<p>Bu veritabanı mimarisi <strong>basitlik</strong>, <strong>güvenilirlik</strong> ve <strong>performans</strong> dengesi kurarak uygulamanın veri ihtiyaçlarını etkin şekilde karşılar.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "toc.integrate", "navigation.instant", "navigation.tracking", "navigation.sections", "search.suggest", "search.highlight", "navigation.top", "content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
