@@ -157,5 +157,4 @@ back_button = ctk.CTkButton(
 | Geçmiş Kayıtlar | Filtreli ve erişilebilir   |
 
 !!! note "Not"
-    !!! note "📌 Son Not"
     MarineMath Desktop'ın kullanıcı arayüzü, mühendislik odaklı çözümleri sade bir deneyimle sunmak üzere tasarlandı. Hesaplama modüllerinin her biri, işlevsel ve bağımsız çalışır. Bu yapı hem geliştirilebilir hem de kullanıcı dostu olmayı hedefler.
