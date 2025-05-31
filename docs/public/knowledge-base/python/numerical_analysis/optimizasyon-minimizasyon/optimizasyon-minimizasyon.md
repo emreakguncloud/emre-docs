@@ -5,7 +5,7 @@
 
 Bu çalışma, gerçek dünya verileri ile sayısal bir modelin doğruluğunu karşılaştırmak amacıyla yapılan bir analizdir. Python programlama dili ve kütüphaneleri (NumPy, pandas, matplotlib) kullanılmıştır. Analiz süreci veri yükleme, model çıktısı ile karşılaştırma, grafikle görselleştirme ve hata metrikleri üretme adımlarından oluşmaktadır. 
 
-Önce şu notu okumanı öneririm → [Bkz: Sayısal Analiz Kavramları](../../../notes/sayısal-analiz-kavramları.md)
+Önce şu notu okumanı öneririm → [Bkz: Sayısal Analiz Kavramları](../../../../notes/sayısal-analiz-kavramları.md)
 
 ---
 

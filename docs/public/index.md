@@ -24,7 +24,7 @@ Kısa vadede "unutmamak", uzun vadede ise bu alanlarda kendimi geliştirip büy�
 ## 📬 İletişim
 - Kişisel e-posta: emreakgun2003@gmail.com  
 - İş e-posta: emre@fcpmarine.com.tr  
-- Kodlar, kaynaklar: [GitHub Repo](https://github.com/emreakguncloud/emre-docs)
+- Bu dokümantasyonun açık kaynak kodları: [GitHub Repo](https://github.com/emreakguncloud/emre-docs)
 
 ---
 

@@ -52,7 +52,12 @@ markdown_extensions:
 nav:
   - Ana Sayfa: index.md
   - Projeler:
-      - Proje Örnek: projects/index.md
+      - Projerim Hakkında: projects/index.md
+      - MarineMath (CustomTkinter Desktop App):
+          - İndex: projects/MarineMath-CustomTkinter-Desktop-App/index.md
+          - UI ve Kullanım: projects/MarineMath-CustomTkinter-Desktop-App/ui-usage.md
+          - Uygulamanın Yapısı: projects/MarineMath-CustomTkinter-Desktop-App/architecture.md
+          - Database: projects/MarineMath-CustomTkinter-Desktop-App/database.md
   - Bilgi Bankası:
       - Kullanım Rehberi: knowledge-base/00-setup-guide.md
       - Python:
@@ -62,6 +67,6 @@ nav:
           - Grafik Oluşturma:
               - Temel Grafikler: knowledge-base/python/graph/graph.md
   - Notlar:
-      - Genel Not: notes/general.md
+      - İlerleme Notu: notes/general.md
       - Sayısal Analiz: notes/sayısal-analiz-kavramları.md
   - Kaynaklar: references.md
