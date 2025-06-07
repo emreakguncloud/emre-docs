@@ -65,7 +65,7 @@ nav:
   - Notlar:
       - İlerleme Notu: public\notes\general.md
       - Sayısal Analiz: public/notes/sayısal-analiz-kavramları.md
-      - İstatistik Fizik Laboratuvarı Dağılımlar: public/notes/İstatistik.md
+      - İstatistik Fizik Laboratuvarı Dağılımlar: public/notes/istatistikfizik.md
   - Kaynaklar: public/references.md
   - Gizli Projeler:
       - MarineMath: private/projects/marinemath/index.md
