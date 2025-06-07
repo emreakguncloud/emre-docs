@@ -2,54 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://emreakguncloud.github.io/emre-docs/index.html</loc>
-         <lastmod>2025-05-31</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://emreakguncloud.github.io/emre-docs/references.html</loc>
-         <lastmod>2025-05-31</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://emreakguncloud.github.io/emre-docs/knowledge-base/00-setup-guide.html</loc>
-         <lastmod>2025-05-31</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://emreakguncloud.github.io/emre-docs/knowledge-base/python/graph/graph.html</loc>
-         <lastmod>2025-05-31</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://emreakguncloud.github.io/emre-docs/knowledge-base/python/numerical_analysis/Interpolasyon-ve-Regresyon/Interpolasyon-ve-Regresyon.html</loc>
-         <lastmod>2025-05-31</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://emreakguncloud.github.io/emre-docs/knowledge-base/python/numerical_analysis/optimizasyon-minimizasyon/optimizasyon-minimizasyon.html</loc>
-         <lastmod>2025-05-31</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://emreakguncloud.github.io/emre-docs/notes/general.html</loc>
-         <lastmod>2025-05-31</lastmod>
+         <lastmod>2025-06-07</lastmod>
+    </url>
+    <url>
+         <loc>https://emreakguncloud.github.io/emre-docs/notes/istatistikfizik.html</loc>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://emreakguncloud.github.io/emre-docs/notes/say%C4%B1sal-analiz-kavramlar%C4%B1.html</loc>
-         <lastmod>2025-05-31</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://emreakguncloud.github.io/emre-docs/projects/index.html</loc>
-         <lastmod>2025-05-31</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://emreakguncloud.github.io/emre-docs/projects/MarineMath-CustomTkinter-Desktop-App/index.html</loc>
-         <lastmod>2025-05-31</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://emreakguncloud.github.io/emre-docs/projects/MarineMath-CustomTkinter-Desktop-App/architecture.html</loc>
-         <lastmod>2025-05-31</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://emreakguncloud.github.io/emre-docs/projects/MarineMath-CustomTkinter-Desktop-App/database.html</loc>
-         <lastmod>2025-05-31</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
     <url>
          <loc>https://emreakguncloud.github.io/emre-docs/projects/MarineMath-CustomTkinter-Desktop-App/ui-usage.html</loc>
-         <lastmod>2025-05-31</lastmod>
+         <lastmod>2025-06-07</lastmod>
     </url>
 </urlset>
