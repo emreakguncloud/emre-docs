@@ -69,6 +69,7 @@ nav:
   - Kaynaklar: public/references.md
   - Gizli Projeler:
       - MarineMath: private/projects/marinemath/index.md
+      - MarineLife: private/projects/MarineLife/history.md
   - Gizli Not:
     - Gizli Notlarım: private/gizli.md
     - Portfolio Sitesi Kararları: private/portfolio-site.md
