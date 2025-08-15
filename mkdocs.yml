@@ -57,13 +57,15 @@ nav:
   - Bilgi Bankası:
       - Kullanım Rehberi: public/knowledge-base/00-setup-guide.md
       - Python:
+          - Veri Analizi:
+              - Numpy: public/knowledge-base/python/numpy.md
           - Sayısal Analiz: 
               - Optimizasyon/Minimizasyon: public/knowledge-base/python/numerical_analysis/optimizasyon-minimizasyon/optimizasyon-minimizasyon.md
               - İnterpolasyon ve Regresyon: public/knowledge-base/python/numerical_analysis/Interpolasyon-ve-Regresyon/Interpolasyon-ve-Regresyon.md
           - Grafik Oluşturma: 
-              - Temel Grafikler: public\knowledge-base\python\graph\graph.md
+              - Temel Grafikler: public/knowledge-base/python/graph/graph.md
   - Notlar:
-      - İlerleme Notu: public\notes\general.md
+      - İlerleme Notu: public/notes/general.md
       - Sayısal Analiz: public/notes/sayısal-analiz-kavramları.md
       - İstatistik Fizik Laboratuvarı Dağılımlar: public/notes/istatistikfizik.md
   - Kaynaklar: public/references.md
