@@ -1,0 +1,2538 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://emreakguncloud.github.io/emre-docs/knowledge-base/python/numerical_analysis/pandas.html">
+      
+      
+        <link rel="prev" href="numpy.html">
+      
+      
+        <link rel="next" href="Interpolasyon-ve-Regresyon/Interpolasyon-ve-Regresyon.html">
+      
+      
+      <link rel="icon" href="../../../images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
+    
+    
+      
+        <title>Pandas - Emre Akgün Dökümantasyon</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pandas-kapsaml-referans-rehberi" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../index.html" title="Emre Akgün Dökümantasyon" class="md-header__button md-logo" aria-label="Emre Akgün Dökümantasyon" data-md-component="logo">
+      
+  <img src="../../../images/mercedes-benz-1-logo-png-transparent.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Emre Akgün Dökümantasyon
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pandas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Karanlık moda geç"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Karanlık moda geç" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 2c-1.05 0-2.05.16-3 .46 4.06 1.27 7 5.04 7 9.54s-2.94 8.27-7 9.54c.95.3 1.95.46 3 .46a10 10 0 0 0 10-10A10 10 0 0 0 9 2"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Aydınlık moda geç"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Aydınlık moda geç" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../index.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Ana Sayfa
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/index.html" class="md-tabs__link">
+          
+  
+  
+  Projeler
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../index.html" class="md-tabs__link">
+          
+  
+  
+  Bilgi Bankası
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../notes/general.html" class="md-tabs__link">
+          
+  
+  
+  Notlar
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../references.html" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Kaynaklar
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../index.html" title="Emre Akgün Dökümantasyon" class="md-nav__button md-logo" aria-label="Emre Akgün Dökümantasyon" data-md-component="logo">
+      
+  <img src="../../../images/mercedes-benz-1-logo-png-transparent.png" alt="logo">
+
+    </a>
+    Emre Akgün Dökümantasyon
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ana Sayfa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Projeler
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Projeler
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Projerim Hakkında
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    MarineMath (CustomTkinter Desktop App)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            MarineMath (CustomTkinter Desktop App)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/MarineMath-CustomTkinter-Desktop-App/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    İndex
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/MarineMath-CustomTkinter-Desktop-App/ui-usage.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UI ve Kullanım
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/MarineMath-CustomTkinter-Desktop-App/architecture.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Uygulamanın Yapısı
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/MarineMath-CustomTkinter-Desktop-App/database.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Database
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Bilgi Bankası
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Bilgi Bankası
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ana Sayfa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_1" id="__nav_3_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Sayısal Analiz
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Sayısal Analiz
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="numpy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Numpy
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Pandas
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="pandas.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pandas
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kurulum-ve-ice-aktarma" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Kurulum ve İçe Aktarma
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temel-veri-yaplar" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏗️ Temel Veri Yapıları
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ Temel Veri Yapıları">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#series-tek-boyutlu-veri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Series (Tek Boyutlu Veri)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dataframe-iki-boyutlu-veri" class="md-nav__link">
+    <span class="md-ellipsis">
+      DataFrame (İki Boyutlu Veri)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#veri-inceleme-ve-kesfi" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 Veri İnceleme ve Keşfi
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Veri İnceleme ve Keşfi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temel-inceleme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temel İnceleme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#istatistiksel-ozet" class="md-nav__link">
+    <span class="md-ellipsis">
+      İstatistiksel Özet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#veri-secimi-ve-filtreleme" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Veri Seçimi ve Filtreleme
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Veri Seçimi ve Filtreleme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sutun-secimi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sütun Seçimi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#satr-secimi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Satır Seçimi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gelismis-filtreleme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gelişmiş Filtreleme
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#veri-manipulasyonu" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Veri Manipülasyonu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Veri Manipülasyonu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yeni-sutun-ekleme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Yeni Sütun Ekleme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#veri-degistirme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Veri Değiştirme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sralama" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sıralama
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gruplama-ve-aggregation" class="md-nav__link">
+    <span class="md-ellipsis">
+      📈 Gruplama ve Aggregation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📈 Gruplama ve Aggregation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temel-gruplama" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temel Gruplama
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gelismis-aggregation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gelişmiş Aggregation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#veri-birlestirme" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Veri Birleştirme
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔄 Veri Birleştirme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concat-islemi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concat İşlemi
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#join-islemleri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Join İşlemleri
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pivot-ve-reshaping" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗂️ Pivot ve Reshaping
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🗂️ Pivot ve Reshaping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pivot-tablolar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pivot Tabloları
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#melt-ve-widelong-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      Melt ve Wide/Long Format
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tarih-ve-zaman-islemleri" class="md-nav__link">
+    <span class="md-ellipsis">
+      📅 Tarih ve Zaman İşlemleri
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📅 Tarih ve Zaman İşlemleri">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datetime-donusumu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datetime Dönüşümü
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zaman-serisi-islemleri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zaman Serisi İşlemleri
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dosya-islemleri" class="md-nav__link">
+    <span class="md-ellipsis">
+      💾 Dosya İşlemleri
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="💾 Dosya İşlemleri">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#csv-islemleri" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSV İşlemleri
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#excel-islemleri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Excel İşlemleri
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diger-formatlar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diğer Formatlar
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#veri-temizleme" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧹 Veri Temizleme
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧹 Veri Temizleme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#eksik-veri-isleme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Eksik Veri İşleme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-tekrar-eden-veriler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Duplicate (Tekrar Eden) Veriler
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#veri-tipi-donusumleri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Veri Tipi Dönüşümleri
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#istatistiksel-islemler" class="md-nav__link">
+    <span class="md-ellipsis">
+      📊 İstatistiksel İşlemler
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 İstatistiksel İşlemler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#korelasyon-ve-kovaryans" class="md-nav__link">
+    <span class="md-ellipsis">
+      Korelasyon ve Kovaryans
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#betimsel-istatistikler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Betimsel İstatistikler
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gelismis-ozellikler" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Gelişmiş Özellikler
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Gelişmiş Özellikler">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiindex-cok-seviyeli-indeks" class="md-nav__link">
+    <span class="md-ellipsis">
+      MultiIndex (Çok Seviyeli İndeks)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kategorik-veriler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kategorik Veriler
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rolling-ve-expanding-windows" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rolling ve Expanding Windows
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performans-optimizasyonu" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚡ Performans Optimizasyonu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚡ Performans Optimizasyonu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#memory-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vectorized-islemler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vectorized İşlemler
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chaining-islemleri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chaining İşlemleri
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gorsellestirme-entegrasyonu" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎨 Görselleştirme Entegrasyonu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎨 Görselleştirme Entegrasyonu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pandas-ile-plotting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pandas ile Plotting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#seaborn-entegrasyonu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seaborn Entegrasyonu
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-ve-ipuclar" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Debugging ve İpuçları
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Debugging ve İpuçları">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yaygn-hatalar-ve-cozumler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Yaygın Hatalar ve Çözümler
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debugging-araclar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debugging Araçları
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diger-kutuphanelerle-entegrasyon" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔗 Diğer Kütüphanelerle Entegrasyon
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔗 Diğer Kütüphanelerle Entegrasyon">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numpy-ile" class="md-nav__link">
+    <span class="md-ellipsis">
+      NumPy ile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scikit-learn-ile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scikit-learn ile
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hzl-referans-tablosu" class="md-nav__link">
+    <span class="md-ellipsis">
+      📖 Hızlı Referans Tablosu
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ileri-seviye-konular" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 İleri Seviye Konular
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 İleri Seviye Konular">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#query-optimizasyonu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query Optimizasyonu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Interpolasyon-ve-Regresyon/Interpolasyon-ve-Regresyon.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    İnterpolasyon ve Regresyon
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Grafik Oluşturma
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Grafik Oluşturma
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graph/graph.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Temel Grafikler
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Notlar
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Notlar
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes/general.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    İlerleme Notu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes/say%C4%B1sal-analiz-kavramlar%C4%B1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Sayısal Analiz
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notes/istatistikfizik.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    İstatistik Fizik Laboratuvarı Dağılımlar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-setup-guide.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kullanım Rehberi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Kaynaklar
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="pandas-kapsaml-referans-rehberi">Pandas Kapsamlı Referans Rehberi<a class="headerlink" href="#pandas-kapsaml-referans-rehberi" title="Permanent link">&para;</a></h1>
+<div class="admonition info">
+<p class="admonition-title">Pandas Nedir?</p>
+<p>Pandas (Python Data Analysis Library), Python'da veri analizi ve manipülasyonu için en güçlü kütüphanedir. Tablo şeklindeki verileri (DataFrame) ve tek boyutlu verileri (Series) işlemek için kapsamlı araçlar sunar.</p>
+</div>
+<h2 id="kurulum-ve-ice-aktarma">📦 Kurulum ve İçe Aktarma<a class="headerlink" href="#kurulum-ve-ice-aktarma" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Kurulum</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">pandas</span>
+
+<span class="c1"># İçe aktarma</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>  <span class="c1"># Genellikle birlikte kullanılır</span>
+</code></pre></div>
+<h2 id="temel-veri-yaplar">🏗️ Temel Veri Yapıları<a class="headerlink" href="#temel-veri-yaplar" title="Permanent link">&para;</a></h2>
+<h3 id="series-tek-boyutlu-veri">Series (Tek Boyutlu Veri)<a class="headerlink" href="#series-tek-boyutlu-veri" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Liste/array&#39;den Series oluşturma</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">s2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">])</span>
+
+<span class="c1"># Sözlükten Series</span>
+<span class="n">data_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<span class="n">s3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data_dict</span><span class="p">)</span>
+
+<span class="c1"># NumPy array&#39;den Series</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">s4</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Series özellikleri</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">values</span>      <span class="c1"># NumPy array olarak değerler</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">index</span>       <span class="c1"># İndeks bilgisi</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;sayılar&quot;</span>  <span class="c1"># İsim atama</span>
+</code></pre></div>
+<h3 id="dataframe-iki-boyutlu-veri">DataFrame (İki Boyutlu Veri)<a class="headerlink" href="#dataframe-iki-boyutlu-veri" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Sözlükten DataFrame</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;isim&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Ali&#39;</span><span class="p">,</span> <span class="s1">&#39;Ayşe&#39;</span><span class="p">,</span> <span class="s1">&#39;Mehmet&#39;</span><span class="p">,</span> <span class="s1">&#39;Fatma&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;yaş&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">28</span><span class="p">],</span>
+    <span class="s1">&#39;şehir&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;İstanbul&#39;</span><span class="p">,</span> <span class="s1">&#39;Ankara&#39;</span><span class="p">,</span> <span class="s1">&#39;İzmir&#39;</span><span class="p">,</span> <span class="s1">&#39;Bursa&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;maaş&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">6000</span><span class="p">,</span> <span class="mi">7000</span><span class="p">,</span> <span class="mi">5500</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Listelerden DataFrame</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
+    <span class="p">[</span><span class="s1">&#39;Ali&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s1">&#39;İstanbul&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;Ayşe&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;Ankara&#39;</span><span class="p">]</span>
+<span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">,</span> <span class="s1">&#39;yaş&#39;</span><span class="p">,</span> <span class="s1">&#39;şehir&#39;</span><span class="p">])</span>
+
+<span class="c1"># NumPy array&#39;den DataFrame</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">])</span>
+
+<span class="c1"># DataFrame özellikleri</span>
+<span class="n">df</span><span class="o">.</span><span class="n">shape</span>       <span class="c1"># (4, 4) - boyut</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span>     <span class="c1"># Sütun isimleri</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span>       <span class="c1"># Satır indeksleri</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>      <span class="c1"># Veri tipleri</span>
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>      <span class="c1"># Genel bilgi</span>
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>  <span class="c1"># İstatistiksel özet</span>
+</code></pre></div>
+<h2 id="veri-inceleme-ve-kesfi">📊 Veri İnceleme ve Keşfi<a class="headerlink" href="#veri-inceleme-ve-kesfi" title="Permanent link">&para;</a></h2>
+<h3 id="temel-inceleme">Temel İnceleme<a class="headerlink" href="#temel-inceleme" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># İlk/son satırlar</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>          <span class="c1"># İlk 5 satır</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>        <span class="c1"># İlk 10 satır</span>
+<span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">()</span>          <span class="c1"># Son 5 satır</span>
+<span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>         <span class="c1"># Son 3 satır</span>
+
+<span class="c1"># Rastgele örnekleme</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>       <span class="c1"># 5 rastgele satır</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">frac</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>  <span class="c1"># %10&#39;unu rastgele al</span>
+
+<span class="c1"># Boyut ve şekil bilgisi</span>
+<span class="n">df</span><span class="o">.</span><span class="n">shape</span>           <span class="c1"># (satır, sütun)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">size</span>            <span class="c1"># Toplam eleman sayısı</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>            <span class="c1"># Satır sayısı</span>
+<span class="n">df</span><span class="o">.</span><span class="n">ndim</span>            <span class="c1"># Boyut sayısı (her zaman 2)</span>
+
+<span class="c1"># Veri tipleri</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>          <span class="c1"># Her sütunun veri tipi</span>
+<span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">])</span>    <span class="c1"># Metin sütunları</span>
+<span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">])</span>    <span class="c1"># Sayısal sütunlar</span>
+</code></pre></div>
+<h3 id="istatistiksel-ozet">İstatistiksel Özet<a class="headerlink" href="#istatistiksel-ozet" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Temel istatistikler</span>
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>                    <span class="c1"># Sayısal sütunlar için özet</span>
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>       <span class="c1"># Tüm sütunlar için özet</span>
+<span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">])</span>  <span class="c1"># Sadece metin sütunları</span>
+
+<span class="c1"># Eksik veri kontrolü</span>
+<span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span>        <span class="c1"># Her hücre için True/False</span>
+<span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># Her sütunda kaç eksik veri var</span>
+<span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>    <span class="c1"># isnull() ile aynı</span>
+<span class="n">df</span><span class="o">.</span><span class="n">notnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="c1"># Dolu hücre sayısı</span>
+
+<span class="c1"># Benzersiz değerler</span>
+<span class="n">df</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>       <span class="c1"># Her sütunda kaç benzersiz değer var</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;şehir&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>      <span class="c1"># Şehir sütunundaki benzersiz değerler</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;şehir&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>  <span class="c1"># Her değerden kaç tane var</span>
+</code></pre></div>
+<h2 id="veri-secimi-ve-filtreleme">🎯 Veri Seçimi ve Filtreleme<a class="headerlink" href="#veri-secimi-ve-filtreleme" title="Permanent link">&para;</a></h2>
+<h3 id="sutun-secimi">Sütun Seçimi<a class="headerlink" href="#sutun-secimi" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Tek sütun</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">]</span>         <span class="c1"># Series olarak</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;isim&#39;</span><span class="p">]]</span>       <span class="c1"># DataFrame olarak</span>
+
+<span class="c1"># Birden fazla sütun</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;isim&#39;</span><span class="p">,</span> <span class="s1">&#39;yaş&#39;</span><span class="p">]]</span>
+<span class="n">sütunlar</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">,</span> <span class="s1">&#39;yaş&#39;</span><span class="p">,</span> <span class="s1">&#39;maaş&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="n">sütunlar</span><span class="p">]</span>
+
+<span class="c1"># Nokta notasyonu (eğer sütun adında boşluk yoksa)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">isim</span>            <span class="c1"># df[&#39;isim&#39;] ile aynı</span>
+</code></pre></div>
+<h3 id="satr-secimi">Satır Seçimi<a class="headerlink" href="#satr-secimi" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># İndeks tabanlı seçim (iloc)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>         <span class="c1"># İlk satır</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>       <span class="c1"># İlk 3 satır</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># İlk 3 satır, 2. ve 3. sütun</span>
+<span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>        <span class="c1"># Son satır</span>
+
+<span class="c1"># Etiket tabanlı seçim (loc)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>          <span class="c1"># İndeks 0&#39;daki satır</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>        <span class="c1"># İndeks 0&#39;dan 2&#39;ye kadar (dahil)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;isim&#39;</span><span class="p">:</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span>  <span class="c1"># Belirli satır ve sütun aralığı</span>
+
+<span class="c1"># Boolean indeksleme</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">]</span>           <span class="c1"># Yaşı 30&#39;dan büyük olanlar</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;şehir&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;İstanbul&#39;</span><span class="p">]</span>  <span class="c1"># İstanbul&#39;da yaşayanlar</span>
+<span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">5500</span><span class="p">)]</span>  <span class="c1"># Birden fazla koşul</span>
+</code></pre></div>
+<h3 id="gelismis-filtreleme">Gelişmiş Filtreleme<a class="headerlink" href="#gelismis-filtreleme" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># isin() metodu</span>
+<span class="n">şehirler</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;İstanbul&#39;</span><span class="p">,</span> <span class="s1">&#39;Ankara&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;şehir&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">şehirler</span><span class="p">)]</span>
+
+<span class="c1"># String metotları</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)]</span>     <span class="c1"># İsmi A harfi içerenler</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)]</span>   <span class="c1"># A ile başlayanlar</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)]</span>     <span class="c1"># t ile bitenler</span>
+
+<span class="c1"># query() metodu</span>
+<span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;yaş &gt; 30&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;yaş &gt; 30 and maaş &gt; 6000&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;şehir in [&quot;İstanbul&quot;, &quot;Ankara&quot;]&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="veri-manipulasyonu">🔧 Veri Manipülasyonu<a class="headerlink" href="#veri-manipulasyonu" title="Permanent link">&para;</a></h2>
+<h3 id="yeni-sutun-ekleme">Yeni Sütun Ekleme<a class="headerlink" href="#yeni-sutun-ekleme" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Sabit değer</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;ülke&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Türkiye&#39;</span>
+
+<span class="c1"># Hesaplama ile</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş_kategorisi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;Genç&#39;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">30</span> <span class="k">else</span> <span class="s1">&#39;Orta Yaş&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş_bin&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">1000</span>  <span class="c1"># Bin TL cinsinden</span>
+
+<span class="c1"># Koşullu atama</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;deneyim&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;Deneyimli&#39;</span><span class="p">,</span> <span class="s1">&#39;Yeni&#39;</span><span class="p">)</span>
+
+<span class="c1"># Çoklu koşul</span>
+<span class="n">conditions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">,</span>
+    <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">25</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">35</span><span class="p">),</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">35</span>
+<span class="p">]</span>
+<span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Genç&#39;</span><span class="p">,</span> <span class="s1">&#39;Orta&#39;</span><span class="p">,</span> <span class="s1">&#39;Yaşlı&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş_grubu&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">conditions</span><span class="p">,</span> <span class="n">choices</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;Bilinmiyor&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="veri-degistirme">Veri Değiştirme<a class="headerlink" href="#veri-degistirme" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Belirli değerleri değiştirme</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;şehir&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;şehir&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;İstanbul&#39;</span><span class="p">,</span> <span class="s1">&#39;Istanbul&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">({</span><span class="s1">&#39;İstanbul&#39;</span><span class="p">:</span> <span class="s1">&#39;Istanbul&#39;</span><span class="p">,</span> <span class="s1">&#39;Ankara&#39;</span><span class="p">:</span> <span class="s1">&#39;Capital&#39;</span><span class="p">})</span>
+
+<span class="c1"># Mapping ile değiştirme</span>
+<span class="n">şehir_mapping</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;İstanbul&#39;</span><span class="p">:</span> <span class="s1">&#39;IST&#39;</span><span class="p">,</span> <span class="s1">&#39;Ankara&#39;</span><span class="p">:</span> <span class="s1">&#39;ANK&#39;</span><span class="p">,</span> <span class="s1">&#39;İzmir&#39;</span><span class="p">:</span> <span class="s1">&#39;IZM&#39;</span><span class="p">}</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;şehir_kodu&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;şehir&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">şehir_mapping</span><span class="p">)</span>
+
+<span class="c1"># apply() fonksiyonu</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim_uzunluk&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş_kare&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># String işlemleri</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim_büyük&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim_küçük&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim_title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="sralama">Sıralama<a class="headerlink" href="#sralama" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Tek sütuna göre sıralama</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;yaş&#39;</span><span class="p">)</span>                    <span class="c1"># Artan sırada</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;yaş&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>   <span class="c1"># Azalan sırada</span>
+
+<span class="c1"># Birden fazla sütuna göre sıralama</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;yaş&#39;</span><span class="p">,</span> <span class="s1">&#39;maaş&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;yaş&#39;</span><span class="p">,</span> <span class="s1">&#39;maaş&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
+
+<span class="c1"># İndekse göre sıralama</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="gruplama-ve-aggregation">📈 Gruplama ve Aggregation<a class="headerlink" href="#gruplama-ve-aggregation" title="Permanent link">&para;</a></h2>
+<h3 id="temel-gruplama">Temel Gruplama<a class="headerlink" href="#temel-gruplama" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Tek sütuna göre gruplama</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;şehir&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>          <span class="c1"># Her şehir için ortalama</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;şehir&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>           <span class="c1"># Her şehir için toplam</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;şehir&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>         <span class="c1"># Her şehir için sayım</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;şehir&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>          <span class="c1"># Grup boyutları</span>
+
+<span class="c1"># Birden fazla sütuna göre gruplama</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;şehir&#39;</span><span class="p">,</span> <span class="s1">&#39;yaş_grubu&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># Belirli sütunları gruplama</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;şehir&#39;</span><span class="p">)[</span><span class="s1">&#39;maaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>  <span class="c1"># Sadece maaş ortalaması</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;şehir&#39;</span><span class="p">)[[</span><span class="s1">&#39;yaş&#39;</span><span class="p">,</span> <span class="s1">&#39;maaş&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>  <span class="c1"># Yaş ve maaş ortalaması</span>
+</code></pre></div>
+<h3 id="gelismis-aggregation">Gelişmiş Aggregation<a class="headerlink" href="#gelismis-aggregation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Birden fazla fonksiyon uygulama</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;şehir&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s1">&#39;yaş&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;maaş&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Özel aggregation fonksiyonları</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;şehir&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s1">&#39;yaş&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span>  <span class="c1"># Yaş aralığı</span>
+    <span class="s1">&#39;maaş&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># transform() - grup bazlı dönüşüm</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş_ort_şehir&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;şehir&#39;</span><span class="p">)[</span><span class="s1">&#39;maaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş_rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;şehir&#39;</span><span class="p">)[</span><span class="s1">&#39;maaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="veri-birlestirme">🔄 Veri Birleştirme<a class="headerlink" href="#veri-birlestirme" title="Permanent link">&para;</a></h2>
+<h3 id="concat-islemi">Concat İşlemi<a class="headerlink" href="#concat-islemi" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Dikey birleştirme (satır bazlı)</span>
+<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]})</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]})</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">])</span>                    <span class="c1"># Alt alta birleştir</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># İndeksleri sıfırla</span>
+
+<span class="c1"># Yatay birleştirme (sütun bazlı)</span>
+<span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">]})</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df3</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Yan yana birleştir</span>
+</code></pre></div>
+<h3 id="join-islemleri">Join İşlemleri<a class="headerlink" href="#join-islemleri" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Örnek veriler</span>
+<span class="n">df_sol</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;anahtar&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;değer1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="n">df_sağ</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;anahtar&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;değer2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Inner join (kesişim)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_sol</span><span class="p">,</span> <span class="n">df_sağ</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;anahtar&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+
+<span class="c1"># Left join (sol tablo tam)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_sol</span><span class="p">,</span> <span class="n">df_sağ</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;anahtar&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
+<span class="c1"># Right join (sağ tablo tam)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_sol</span><span class="p">,</span> <span class="n">df_sağ</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;anahtar&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+
+<span class="c1"># Outer join (birleşim)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_sol</span><span class="p">,</span> <span class="n">df_sağ</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;anahtar&#39;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">)</span>
+
+<span class="c1"># Farklı sütun isimleri</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_sol</span><span class="p">,</span> <span class="n">df_sağ</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s1">&#39;anahtar&#39;</span><span class="p">,</span> <span class="n">right_on</span><span class="o">=</span><span class="s1">&#39;key&#39;</span><span class="p">)</span>
+
+<span class="c1"># İndeks bazlı join</span>
+<span class="n">df_sol</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df_sağ</span><span class="p">,</span> <span class="n">lsuffix</span><span class="o">=</span><span class="s1">&#39;_sol&#39;</span><span class="p">,</span> <span class="n">rsuffix</span><span class="o">=</span><span class="s1">&#39;_sağ&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="pivot-ve-reshaping">🗂️ Pivot ve Reshaping<a class="headerlink" href="#pivot-ve-reshaping" title="Permanent link">&para;</a></h2>
+<h3 id="pivot-tablolar">Pivot Tabloları<a class="headerlink" href="#pivot-tablolar" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Basit pivot</span>
+<span class="n">df_pivot</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+    <span class="n">values</span><span class="o">=</span><span class="s1">&#39;maaş&#39;</span><span class="p">,</span>
+    <span class="n">index</span><span class="o">=</span><span class="s1">&#39;şehir&#39;</span><span class="p">,</span>
+    <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;yaş_grubu&#39;</span><span class="p">,</span>
+    <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span>
+<span class="p">)</span>
+
+<span class="c1"># Birden fazla değer sütunu</span>
+<span class="n">df</span><span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span>
+    <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;maaş&#39;</span><span class="p">,</span> <span class="s1">&#39;yaş&#39;</span><span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="s1">&#39;şehir&#39;</span><span class="p">,</span>
+    <span class="n">aggfunc</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;maaş&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;yaş&#39;</span><span class="p">:</span> <span class="s1">&#39;count&#39;</span><span class="p">}</span>
+<span class="p">)</span>
+
+<span class="c1"># Pivot ile crosstab</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;şehir&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş_grubu&#39;</span><span class="p">])</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;şehir&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş_grubu&#39;</span><span class="p">],</span> <span class="n">margins</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Toplamlarla</span>
+</code></pre></div>
+<h3 id="melt-ve-widelong-format">Melt ve Wide/Long Format<a class="headerlink" href="#melt-ve-widelong-format" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Wide&#39;dan Long&#39;a (melt)</span>
+<span class="n">df_wide</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;kişi&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Ali&#39;</span><span class="p">,</span> <span class="s1">&#39;Ayşe&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;2020&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">6000</span><span class="p">],</span>
+    <span class="s1">&#39;2021&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5500</span><span class="p">,</span> <span class="mi">6500</span><span class="p">],</span>
+    <span class="s1">&#39;2022&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">6000</span><span class="p">,</span> <span class="mi">7000</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">df_long</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
+    <span class="n">df_wide</span><span class="p">,</span>
+    <span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;kişi&#39;</span><span class="p">],</span>
+    <span class="n">value_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;2020&#39;</span><span class="p">,</span> <span class="s1">&#39;2021&#39;</span><span class="p">,</span> <span class="s1">&#39;2022&#39;</span><span class="p">],</span>
+    <span class="n">var_name</span><span class="o">=</span><span class="s1">&#39;yıl&#39;</span><span class="p">,</span>
+    <span class="n">value_name</span><span class="o">=</span><span class="s1">&#39;maaş&#39;</span>
+<span class="p">)</span>
+
+<span class="c1"># Long&#39;dan Wide&#39;a (pivot)</span>
+<span class="n">df_wide_back</span> <span class="o">=</span> <span class="n">df_long</span><span class="o">.</span><span class="n">pivot</span><span class="p">(</span>
+    <span class="n">index</span><span class="o">=</span><span class="s1">&#39;kişi&#39;</span><span class="p">,</span>
+    <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;yıl&#39;</span><span class="p">,</span>
+    <span class="n">values</span><span class="o">=</span><span class="s1">&#39;maaş&#39;</span>
+<span class="p">)</span>
+</code></pre></div>
+<h2 id="tarih-ve-zaman-islemleri">📅 Tarih ve Zaman İşlemleri<a class="headerlink" href="#tarih-ve-zaman-islemleri" title="Permanent link">&para;</a></h2>
+<h3 id="datetime-donusumu">Datetime Dönüşümü<a class="headerlink" href="#datetime-donusumu" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># String&#39;den datetime&#39;a</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;tarih&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">([</span><span class="s1">&#39;2023-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2023-01-02&#39;</span><span class="p">,</span> <span class="s1">&#39;2023-01-03&#39;</span><span class="p">,</span> <span class="s1">&#39;2023-01-04&#39;</span><span class="p">])</span>
+
+<span class="c1"># Farklı formatlar</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;tarih2&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">([</span><span class="s1">&#39;01/01/2023&#39;</span><span class="p">,</span> <span class="s1">&#39;02/01/2023&#39;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%d</span><span class="s1">/%m/%Y&#39;</span><span class="p">)</span>
+
+<span class="c1"># Datetime bilgilerini çıkarma</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;yıl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tarih&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">year</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;ay&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tarih&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;gün&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tarih&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;haftanın_günü&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tarih&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">dayofweek</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;haftanın_günü_isim&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tarih&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">day_name</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="zaman-serisi-islemleri">Zaman Serisi İşlemleri<a class="headerlink" href="#zaman-serisi-islemleri" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Tarih indeksi</span>
+<span class="n">df_zaman</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;tarih&#39;</span><span class="p">)</span>
+
+<span class="c1"># Zaman aralığı oluşturma</span>
+<span class="n">tarih_aralığı</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;2023-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2023-12-31&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">)</span>  <span class="c1"># Günlük</span>
+<span class="n">tarih_aralığı_ay</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;2023-01-01&#39;</span><span class="p">,</span> <span class="s1">&#39;2023-12-31&#39;</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>  <span class="c1"># Aylık</span>
+
+<span class="c1"># Resample (zaman bazlı gruplama)</span>
+<span class="n">df_günlük</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;tarih&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;2023-01-01&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">365</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s1">&#39;D&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;değer&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">365</span><span class="p">)</span>
+<span class="p">})</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;tarih&#39;</span><span class="p">)</span>
+
+<span class="n">df_aylık</span> <span class="o">=</span> <span class="n">df_günlük</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>    <span class="c1"># Aylık ortalama</span>
+<span class="n">df_haftalık</span> <span class="o">=</span> <span class="n">df_günlük</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>  <span class="c1"># Haftalık toplam</span>
+</code></pre></div>
+<h2 id="dosya-islemleri">💾 Dosya İşlemleri<a class="headerlink" href="#dosya-islemleri" title="Permanent link">&para;</a></h2>
+<h3 id="csv-islemleri">CSV İşlemleri<a class="headerlink" href="#csv-islemleri" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># CSV okuma</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;dosya.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;dosya.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>           <span class="c1"># Farklı ayırıcı</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;dosya.csv&#39;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>       <span class="c1"># İlk sütunu indeks yap</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;dosya.csv&#39;</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">])</span> <span class="c1"># Sadece belirli sütunları oku</span>
+
+<span class="c1"># CSV yazma</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;çıktı.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;çıktı.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>      <span class="c1"># İndeks olmadan</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;çıktı.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>          <span class="c1"># Farklı ayırıcı</span>
+</code></pre></div>
+<h3 id="excel-islemleri">Excel İşlemleri<a class="headerlink" href="#excel-islemleri" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Excel okuma</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;dosya.xlsx&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;dosya.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Sayfa1&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;dosya.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># Tüm sayfalar</span>
+
+<span class="c1"># Excel yazma</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;çıktı.xlsx&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s1">&#39;çıktı.xlsx&#39;</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;VerilerIM&#39;</span><span class="p">)</span>
+
+<span class="c1"># Birden fazla sayfa</span>
+<span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">ExcelWriter</span><span class="p">(</span><span class="s1">&#39;çıktı.xlsx&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
+    <span class="n">df1</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Sayfa1&#39;</span><span class="p">)</span>
+    <span class="n">df2</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Sayfa2&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="diger-formatlar">Diğer Formatlar<a class="headerlink" href="#diger-formatlar" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># JSON</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="s1">&#39;dosya.json&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="s1">&#39;dosya.json&#39;</span><span class="p">)</span>
+
+<span class="c1"># Parquet</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="s1">&#39;dosya.parquet&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s1">&#39;dosya.parquet&#39;</span><span class="p">)</span>
+
+<span class="c1"># SQL</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sqlite3</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;veritabanı.db&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;tablo_adı&#39;</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM tablo_adı&#39;</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="veri-temizleme">🧹 Veri Temizleme<a class="headerlink" href="#veri-temizleme" title="Permanent link">&para;</a></h2>
+<h3 id="eksik-veri-isleme">Eksik Veri İşleme<a class="headerlink" href="#eksik-veri-isleme" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Eksik verileri tespit etme</span>
+<span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+
+<span class="c1"># Eksik verileri doldurma</span>
+<span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>                    <span class="c1"># 0 ile doldur</span>
+<span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>            <span class="c1"># Ortalama ile doldur</span>
+<span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;ffill&#39;</span><span class="p">)</span>       <span class="c1"># Önceki değerle doldur</span>
+<span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;bfill&#39;</span><span class="p">)</span>       <span class="c1"># Sonraki değerle doldur</span>
+
+<span class="c1"># Sütun bazlı doldurma</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">())</span>
+
+<span class="c1"># Eksik verileri silme</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>                     <span class="c1"># Eksik veri olan satırları sil</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>               <span class="c1"># Eksik veri olan sütunları sil</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">thresh</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>             <span class="c1"># En az 2 dolu değer olan satırları tut</span>
+</code></pre></div>
+<h3 id="duplicate-tekrar-eden-veriler">Duplicate (Tekrar Eden) Veriler<a class="headerlink" href="#duplicate-tekrar-eden-veriler" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Tekrar eden satırları bulma</span>
+<span class="n">df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span>                 <span class="c1"># Boolean Series</span>
+<span class="n">df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>           <span class="c1"># Kaç tekrar var</span>
+
+<span class="c1"># Tekrar eden satırları görme</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()]</span>
+
+<span class="c1"># Tekrar eden satırları silme</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span>            <span class="c1"># İlkini tut</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">keep</span><span class="o">=</span><span class="s1">&#39;last&#39;</span><span class="p">)</span> <span class="c1"># Sonuncusunu tut</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">])</span>  <span class="c1"># Sadece isim sütununa göre</span>
+</code></pre></div>
+<h3 id="veri-tipi-donusumleri">Veri Tipi Dönüşümleri<a class="headerlink" href="#veri-tipi-donusumleri" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Veri tipi değiştirme</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;şehir&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;şehir&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+
+<span class="c1"># Sayısal dönüşüm (hatalar için)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;sayı&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;metin_sayı&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>  <span class="c1"># Hata varsa NaN</span>
+
+<span class="c1"># String işlemleri</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>        <span class="c1"># Boşlukları temizle</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span>  <span class="c1"># Boşlukları _ ile değiştir</span>
+</code></pre></div>
+<h2 id="istatistiksel-islemler">📊 İstatistiksel İşlemler<a class="headerlink" href="#istatistiksel-islemler" title="Permanent link">&para;</a></h2>
+<h3 id="korelasyon-ve-kovaryans">Korelasyon ve Kovaryans<a class="headerlink" href="#korelasyon-ve-kovaryans" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Korelasyon matrisi</span>
+<span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>                       <span class="c1"># Pearson korelasyonu</span>
+<span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;spearman&#39;</span><span class="p">)</span>      <span class="c1"># Spearman korelasyonu</span>
+<span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;kendall&#39;</span><span class="p">)</span>       <span class="c1"># Kendall korelasyonu</span>
+
+<span class="c1"># İki sütun arası korelasyon</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş&#39;</span><span class="p">])</span>
+
+<span class="c1"># Kovaryans</span>
+<span class="n">df</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="betimsel-istatistikler">Betimsel İstatistikler<a class="headerlink" href="#betimsel-istatistikler" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Temel istatistikler</span>
+<span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>          <span class="c1"># Ortalama</span>
+<span class="n">df</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>        <span class="c1"># Medyan</span>
+<span class="n">df</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>          <span class="c1"># Mod</span>
+<span class="n">df</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>           <span class="c1"># Standart sapma</span>
+<span class="n">df</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>           <span class="c1"># Varyans</span>
+<span class="n">df</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>           <span class="c1"># Minimum</span>
+<span class="n">df</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>           <span class="c1"># Maksimum</span>
+<span class="n">df</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>  <span class="c1"># %25 çeyreklik</span>
+<span class="n">df</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">])</span>  <span class="c1"># Çeyreklikler</span>
+
+<span class="c1"># Çarpıklık ve basıklık</span>
+<span class="n">df</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span>          <span class="c1"># Çarpıklık</span>
+<span class="n">df</span><span class="o">.</span><span class="n">kurt</span><span class="p">()</span>          <span class="c1"># Basıklık (kurtosis)</span>
+</code></pre></div>
+<h2 id="gelismis-ozellikler">🎯 Gelişmiş Özellikler<a class="headerlink" href="#gelismis-ozellikler" title="Permanent link">&para;</a></h2>
+<h3 id="multiindex-cok-seviyeli-indeks">MultiIndex (Çok Seviyeli İndeks)<a class="headerlink" href="#multiindex-cok-seviyeli-indeks" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># MultiIndex oluşturma</span>
+<span class="n">arrays</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]</span>
+<span class="n">df_multi</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> 
+                       <span class="n">index</span><span class="o">=</span><span class="n">arrays</span><span class="p">,</span> 
+                       <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;X&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">])</span>
+
+<span class="c1"># Seviye bazlı işlemler</span>
+<span class="n">df_multi</span><span class="o">.</span><span class="n">xs</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)</span>                    <span class="c1"># A seviyesindeki veriler</span>
+<span class="n">df_multi</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)]</span>              <span class="c1"># Belirli indeks</span>
+<span class="n">df_multi</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>               <span class="c1"># İlk seviye bazlı toplam</span>
+</code></pre></div>
+<h3 id="kategorik-veriler">Kategorik Veriler<a class="headerlink" href="#kategorik-veriler" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Kategorik veri oluşturma</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;şehir_cat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;şehir&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;seviye&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">([</span><span class="s1">&#39;düşük&#39;</span><span class="p">,</span> <span class="s1">&#39;orta&#39;</span><span class="p">,</span> <span class="s1">&#39;yüksek&#39;</span><span class="p">,</span> <span class="s1">&#39;orta&#39;</span><span class="p">],</span> 
+                              <span class="n">categories</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;düşük&#39;</span><span class="p">,</span> <span class="s1">&#39;orta&#39;</span><span class="p">,</span> <span class="s1">&#39;yüksek&#39;</span><span class="p">],</span> 
+                              <span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Kategorik işlemler</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;şehir_cat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">categories</span>      <span class="c1"># Kategorileri göster</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;şehir_cat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">add_categories</span><span class="p">([</span><span class="s1">&#39;Adana&#39;</span><span class="p">])</span>  <span class="c1"># Kategori ekle</span>
+</code></pre></div>
+<h3 id="rolling-ve-expanding-windows">Rolling ve Expanding Windows<a class="headerlink" href="#rolling-ve-expanding-windows" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Hareketli pencere (rolling)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş_3günlük_ort&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş_7günlük_std&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="c1"># Genişleyen pencere (expanding)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş_kümülatif_ort&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">expanding</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş_kümülatif_max&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">expanding</span><span class="p">()</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="performans-optimizasyonu">⚡ Performans Optimizasyonu<a class="headerlink" href="#performans-optimizasyonu" title="Permanent link">&para;</a></h2>
+<h3 id="memory-usage">Memory Usage<a class="headerlink" href="#memory-usage" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bellek kullanımını kontrol etme</span>
+<span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">memory_usage</span><span class="o">=</span><span class="s1">&#39;deep&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">memory_usage</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Veri tipini optimize etme</span>
+<span class="n">df_optimized</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df_optimized</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_optimized</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int8&#39;</span><span class="p">)</span>  <span class="c1"># Küçük int</span>
+<span class="n">df_optimized</span><span class="p">[</span><span class="s1">&#39;şehir&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_optimized</span><span class="p">[</span><span class="s1">&#39;şehir&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>  <span class="c1"># Kategori</span>
+</code></pre></div>
+<h3 id="vectorized-islemler">Vectorized İşlemler<a class="headerlink" href="#vectorized-islemler" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># İyi: Vectorized işlem</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;yeni_sütun&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span>
+
+<span class="c1"># Kötü: Apply ile döngü</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;yeni_sütun&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Çok iyi: NumPy ile</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;yeni_sütun&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="chaining-islemleri">Chaining İşlemleri<a class="headerlink" href="#chaining-islemleri" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Method chaining</span>
+<span class="n">sonuç</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span>
+         <span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;yaş &gt; 25&#39;</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;şehir&#39;</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;maaş&#39;</span><span class="p">:</span> <span class="s1">&#39;mean&#39;</span><span class="p">})</span>
+         <span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;maaş&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+         <span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+</code></pre></div>
+<h2 id="gorsellestirme-entegrasyonu">🎨 Görselleştirme Entegrasyonu<a class="headerlink" href="#gorsellestirme-entegrasyonu" title="Permanent link">&para;</a></h2>
+<h3 id="pandas-ile-plotting">Pandas ile Plotting<a class="headerlink" href="#pandas-ile-plotting" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Basit grafikler</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>         <span class="c1"># Histogram</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;box&#39;</span><span class="p">)</span>          <span class="c1"># Box plot</span>
+<span class="n">df</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;yaş&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;maaş&#39;</span><span class="p">)</span>  <span class="c1"># Scatter plot</span>
+
+<span class="c1"># Grup bazlı grafikler</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;şehir&#39;</span><span class="p">)[</span><span class="s1">&#39;maaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="seaborn-entegrasyonu">Seaborn Entegrasyonu<a class="headerlink" href="#seaborn-entegrasyonu" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="c1"># Korelasyon matrisi heatmap</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+
+<span class="c1"># Pair plot</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;şehir&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="debugging-ve-ipuclar">🔧 Debugging ve İpuçları<a class="headerlink" href="#debugging-ve-ipuclar" title="Permanent link">&para;</a></h2>
+<h3 id="yaygn-hatalar-ve-cozumler">Yaygın Hatalar ve Çözümler<a class="headerlink" href="#yaygn-hatalar-ve-cozumler" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># KeyError: Sütun bulunamadı</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;olmayan_sütun&#39;</span><span class="p">]</span>
+<span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sütun bulunamadı!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mevcut sütunlar:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+
+<span class="c1"># SettingWithCopyWarning</span>
+<span class="c1"># Kötü</span>
+<span class="n">subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">]</span>
+<span class="n">subset</span><span class="p">[</span><span class="s1">&#39;yeni_sütun&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Uyarı verir</span>
+
+<span class="c1"># İyi</span>
+<span class="n">subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">subset</span><span class="p">[</span><span class="s1">&#39;yeni_sütun&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div>
+<h3 id="debugging-araclar">Debugging Araçları<a class="headerlink" href="#debugging-araclar" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># DataFrame hakkında detaylı bilgi</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">debug_dataframe</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shape: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Columns: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Data types:</span><span class="se">\n</span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Memory usage: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">memory_usage</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2"> bytes&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Null values:</span><span class="se">\n</span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Duplicate rows: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Belirli sütunları inceleme</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">inspect_column</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">col</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Column: </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Type: </span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unique values: </span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Null values: </span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Value counts:</span><span class="se">\n</span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Statistics:</span><span class="se">\n</span><span class="si">{</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="diger-kutuphanelerle-entegrasyon">🔗 Diğer Kütüphanelerle Entegrasyon<a class="headerlink" href="#diger-kutuphanelerle-entegrasyon" title="Permanent link">&para;</a></h2>
+<h3 id="numpy-ile">NumPy ile<a class="headerlink" href="#numpy-ile" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># DataFrame&#39;den NumPy array&#39;e</span>
+<span class="n">numpy_array</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">values</span>
+<span class="n">numpy_array</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>  <span class="c1"># Pandas 0.24+</span>
+
+<span class="c1"># NumPy array&#39;den DataFrame&#39;e</span>
+<span class="n">df_from_numpy</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">numpy_array</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">])</span>
+</code></pre></div>
+<h3 id="scikit-learn-ile">Scikit-learn ile<a class="headerlink" href="#scikit-learn-ile" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="c1"># Veri hazırlama</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;yaş&#39;</span><span class="p">,</span> <span class="s1">&#39;maaş&#39;</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;şehir&#39;</span><span class="p">]</span>
+
+<span class="c1"># Train-test split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+
+<span class="c1"># Scaling</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="hzl-referans-tablosu">📖 Hızlı Referans Tablosu<a class="headerlink" href="#hzl-referans-tablosu" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>İşlem</th>
+<th>Fonksiyon</th>
+<th>Örnek</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dosya okuma</td>
+<td><code>pd.read_csv()</code></td>
+<td><code>pd.read_csv('file.csv')</code></td>
+</tr>
+<tr>
+<td>Dosya yazma</td>
+<td><code>df.to_csv()</code></td>
+<td><code>df.to_csv('output.csv')</code></td>
+</tr>
+<tr>
+<td>İlk satırlar</td>
+<td><code>df.head()</code></td>
+<td><code>df.head(10)</code></td>
+</tr>
+<tr>
+<td>Temel bilgi</td>
+<td><code>df.info()</code></td>
+<td><code>df.info()</code></td>
+</tr>
+<tr>
+<td>İstatistik</td>
+<td><code>df.describe()</code></td>
+<td><code>df.describe()</code></td>
+</tr>
+<tr>
+<td>Filtreleme</td>
+<td><code>df[condition]</code></td>
+<td><code>df[df['age'] &gt; 30]</code></td>
+</tr>
+<tr>
+<td>Gruplama</td>
+<td><code>df.groupby()</code></td>
+<td><code>df.groupby('city').mean()</code></td>
+</tr>
+<tr>
+<td>Sıralama</td>
+<td><code>df.sort_values()</code></td>
+<td><code>df.sort_values('age')</code></td>
+</tr>
+<tr>
+<td>Eksik veri</td>
+<td><code>df.fillna()</code></td>
+<td><code>df.fillna(0)</code></td>
+</tr>
+<tr>
+<td>Birleştirme</td>
+<td><code>pd.merge()</code></td>
+<td><code>pd.merge(df1, df2, on='key')</code></td>
+</tr>
+<tr>
+<td>Pivot</td>
+<td><code>df.pivot_table()</code></td>
+<td><code>df.pivot_table(values='sales')</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ileri-seviye-konular">🎯 İleri Seviye Konular<a class="headerlink" href="#ileri-seviye-konular" title="Permanent link">&para;</a></h2>
+<h3 id="query-optimizasyonu">Query Optimizasyonu<a class="headerlink" href="#query-optimizasyonu" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Büyük veriler için memory-efficient okuma</span>
+<span class="n">df_chunks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;büyük_dosya.csv&#39;</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">df_chunks</span><span class="p">:</span>
+    <span class="c1"># Chunk bazlı işlemler</span>
+    <span class="n">processed_chunk</span> <span class="o">=</span> <span class="n">chunk</span><span class="p">[</span><span class="n">chunk</span><span class="p">[</span><span class="s1">&#39;değer&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">]</span>
+    <span class="n">processed_chunk</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;işlenmiş.csv&#39;</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="custom-functions">Custom Functions<a class="headerlink" href="#custom-functions" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Özel aggregation fonksiyonu</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">özel_agg</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">count</span><span class="p">(),</span>
+        <span class="s1">&#39;mean&#39;</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+        <span class="s1">&#39;std&#39;</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span>
+        <span class="s1">&#39;range&#39;</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">x</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+    <span class="p">}</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;şehir&#39;</span><span class="p">)[</span><span class="s1">&#39;maaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">özel_agg</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition success">
+<p class="admonition-title">Başarı İpucu</p>
+<p>Pandas'ın gücü, bu fonksiyonları kombine ederek karmaşık veri analizi görevlerini basit şekilde yapabilmesinde yatar. Bu referansı sık sık kullanarak pratik yapın!</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Performans Uyarısı</p>
+<p>Büyük veri setleriyle çalışırken:
+- Chunksize kullanın
+- Gereksiz sütunları okumayın
+- Uygun veri tiplerini seçin
+- Vectorized işlemleri tercih edin</p>
+</div>
+<hr />
+<p><em>Son güncelleme: Ağustos 2025</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "toc.integrate", "navigation.instant", "navigation.tracking", "navigation.sections", "search.suggest", "search.highlight", "navigation.top", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
