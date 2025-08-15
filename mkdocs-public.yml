@@ -26,6 +26,8 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.sections
+    - navigation.collapse # Başlıkları kapatıp açılabilir yapar
+    - navigation.indexes
     - search.suggest
     - search.highlight
     - navigation.top
