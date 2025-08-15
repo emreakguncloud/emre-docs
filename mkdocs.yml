@@ -23,6 +23,8 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.sections
+    - navigation.collapse # Başlıkları kapatıp açılabilir yapar
+    - navigation.indexes
     - search.suggest
     - search.highlight
     - navigation.top
@@ -55,11 +57,11 @@ nav:
           - Uygulamanın Yapısı: public/projects/MarineMath-CustomTkinter-Desktop-App/architecture.md
           - Database: public/projects/MarineMath-CustomTkinter-Desktop-App/database.md
   - Bilgi Bankası:
-      - Kullanım Rehberi: public/knowledge-base/00-setup-guide.md
+      - Ana Sayfa: public/knowledge-base/index.md
       - Python:
-          - Veri Analizi:
-              - Numpy: public/knowledge-base/python/numpy.md
-          - Sayısal Analiz: 
+          - Sayısal Analiz:
+              - Numpy: public/knowledge-base/python/numerical_analysis/numpy.md
+              - Pandas: public/knowledge-base/python/numerical_analysis/pandas.md 
               - Optimizasyon/Minimizasyon: public/knowledge-base/python/numerical_analysis/optimizasyon-minimizasyon/optimizasyon-minimizasyon.md
               - İnterpolasyon ve Regresyon: public/knowledge-base/python/numerical_analysis/Interpolasyon-ve-Regresyon/Interpolasyon-ve-Regresyon.md
           - Grafik Oluşturma: 
@@ -68,6 +70,7 @@ nav:
       - İlerleme Notu: public/notes/general.md
       - Sayısal Analiz: public/notes/sayısal-analiz-kavramları.md
       - İstatistik Fizik Laboratuvarı Dağılımlar: public/notes/istatistikfizik.md
+      - Kullanım Rehberi: public/knowledge-base/00-setup-guide.md
   - Kaynaklar: public/references.md
   - Gizli Projeler:
       - MarineMath: private/projects/marinemath/index.md

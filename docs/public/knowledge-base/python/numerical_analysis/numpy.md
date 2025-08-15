@@ -366,7 +366,7 @@ np.where(arr > 3, arr, 0)       # 3'ten büyükse kendisi, değilse 0
 np.where(arr > 3, 'büyük', 'küçük')  # String değerler
 
 # Çoklu koşul
-np.select([arr < 2, arr > 4], [arr*10, arr*100], default=arr)
+np.select([arr < 2, arr > 4], [arr*10, arr*100], default=arr) # if,elif,else yapısına benzer.
 ```
 
 ### Veri Tipi İşlemleri
@@ -391,8 +391,10 @@ arr_c = np.array([[1, 2, 3], [4, 5, 6]], order='C')
 arr_f = np.array([[1, 2, 3], [4, 5, 6]], order='F')
 
 # Bellek bilgisi
-arr.flags           # Bellek düzeni bilgileri
-arr.strides         # Stride bilgisi
+arr.flags           # Bellek düzeni bilgileri (Satır öncelikli,Sütun öncelikli değil,Bellek bu diziye ait, Yazılabilir vb.)
+arr.strides         # Stride bilgisi, bellekte bir sonraki elemana geçmek için kaç byte atlanacağını gösterir. 
+
+#Bellek düzeni RAM'in verimli kullanılmasını amaçlar.
 ```
 
 ## ⚡ Performans İpuçları
@@ -451,6 +453,7 @@ noisy_signal = signal + noise
 # Hareketli ortalama filtresi
 window_size = 10
 filtered = np.convolve(noisy_signal, np.ones(window_size)/window_size, mode='valid')
+#Bu kod noisy_signal içindeki gürültüyü azaltmak için her 10 örneğin ortalamasını alıyor. Böylece ani dalgalanmalar yumuşuyor.
 ```
 
 ### Veri Analizi
@@ -467,7 +470,7 @@ z_scores = np.abs((data - np.mean(data)) / np.std(data))
 outliers = data[z_scores > 3]
 
 # Korelasyon analizi
-correlation_matrix = np.corrcoef(data.T)
+correlation_matrix = np.corrcoef(data.T) #Özellikler arasındaki Pearson korelasyon katsayılarını hesaplar, np.corrcoef her satırı değişken (feature) kabul eder.
 ```
 
 ## 📚 Hata Ayıklama ve İpuçları
@@ -540,20 +543,20 @@ plt.show()
 
 ## 📖 Hızlı Referans Tablosu
 
-| İşlem | Fonksiyon | Örnek |
-|-------|-----------|-------|
-| Dizi oluşturma | `np.array()` | `np.array([1,2,3])` |
-| Sıfır dizi | `np.zeros()` | `np.zeros((2,3))` |
-| Bir dizi | `np.ones()` | `np.ones((2,3))` |
-| Aralık | `np.arange()` | `np.arange(0,10,2)` |
-| Şekil değiştirme | `.reshape()` | `arr.reshape(2,3)` |
-| Birleştirme | `np.concatenate()` | `np.concatenate([a,b])` |
-| Ortalama | `np.mean()` | `np.mean(arr)` |
-| Standart sapma | `np.std()` | `np.std(arr)` |
-| Maksimum | `np.max()` | `np.max(arr)` |
-| Minimum | `np.min()` | `np.min(arr)` |
-| Sıralama | `np.sort()` | `np.sort(arr)` |
-| Benzersiz | `np.unique()` | `np.unique(arr)` |
+| İşlem | Fonksiyon | Örnek | Açıklama |
+|-------|-----------|-------|----------|
+| Dizi oluşturma | `np.array()` | `np.array([1,2,3])` | Liste veya tuple'dan NumPy dizisi oluşturur |
+| Sıfır dizi | `np.zeros()` | `np.zeros((2,3))` | Belirtilen boyutlarda sıfırlarla dolu dizi oluşturur |
+| Bir dizi | `np.ones()` | `np.ones((2,3))` | Belirtilen boyutlarda birlerle dolu dizi oluşturur |
+| Aralık | `np.arange()` | `np.arange(0,10,2)` | Başlangıç, bitiş ve adım değerleriyle sayı dizisi oluşturur |
+| Şekil değiştirme | `.reshape()` | `arr.reshape(2,3)` | Dizinin boyutlarını değiştirirken eleman sayısını korur |
+| Birleştirme | `np.concatenate()` | `np.concatenate([a,b])` | İki veya daha fazla diziyi belirtilen eksende birleştirir |
+| Ortalama | `np.mean()` | `np.mean(arr)` | Dizideki elemanların aritmetik ortalamasını hesaplar |
+| Standart sapma | `np.std()` | `np.std(arr)` | Dizideki elemanların standart sapmasını hesaplar |
+| Maksimum | `np.max()` | `np.max(arr)` | Dizideki en büyük değeri bulur |
+| Minimum | `np.min()` | `np.min(arr)` | Dizideki en küçük değeri bulur |
+| Sıralama | `np.sort()` | `np.sort(arr)` | Dizi elemanlarını küçükten büyüğe sıralar |
+| Benzersiz | `np.unique()` | `np.unique(arr)` | Dizideki tekrar eden elemanları kaldırarak benzersiz değerleri döndürür |
 
 !!! success "Başarı İpucu"
     Bu referans dokümanını sık sık gözden geçirin ve pratik yaparak pekiştirin. NumPy'ın gücü, bu fonksiyonları kombine ederek karmaşık işlemleri basit şekilde yapabilmesinde yatar.

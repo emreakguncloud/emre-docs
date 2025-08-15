@@ -59,11 +59,11 @@ nav:
           - Uygulamanın Yapısı: projects/MarineMath-CustomTkinter-Desktop-App/architecture.md
           - Database: projects/MarineMath-CustomTkinter-Desktop-App/database.md
   - Bilgi Bankası:
-      - Kullanım Rehberi: knowledge-base/00-setup-guide.md
+      - Ana Sayfa: knowledge-base/index.md
       - Python:
-          - Veri Analizi:
-              - Numpy: knowledge-base/python/numpy.md
           - Sayısal Analiz:
+              - Numpy: knowledge-base/python/numerical_analysis/numpy.md
+              - Pandas: knowledge-base/python/numerical_analysis/pandas.md
               - İnterpolasyon ve Regresyon: knowledge-base/python/numerical_analysis/Interpolasyon-ve-Regresyon/Interpolasyon-ve-Regresyon.md
           - Grafik Oluşturma:
               - Temel Grafikler: knowledge-base/python/graph/graph.md
@@ -71,4 +71,5 @@ nav:
       - İlerleme Notu: notes/general.md
       - Sayısal Analiz: notes/sayısal-analiz-kavramları.md
       - İstatistik Fizik Laboratuvarı Dağılımlar: notes/istatistikfizik.md
+      - Kullanım Rehberi: knowledge-base/00-setup-guide.md
   - Kaynaklar: references.md
