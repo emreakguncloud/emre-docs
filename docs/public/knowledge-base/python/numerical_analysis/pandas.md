@@ -156,9 +156,9 @@ df[(df['yaş'] > 25) & (df['maaş'] > 5500)]  # Birden fazla koşul
 ### Gelişmiş Filtreleme
 
 ```python
-# isin() metodu
+# isin() metodu 
 şehirler = ['İstanbul', 'Ankara']
-df[df['şehir'].isin(şehirler)]
+df[df['şehir'].isin(şehirler)] #İstanbul ve Ankara içeren verileri seç
 
 # String metotları
 df[df['isim'].str.contains('A')]     # İsmi A harfi içerenler
@@ -217,6 +217,83 @@ df['isim_küçük'] = df['isim'].str.lower()
 df['isim_title'] = df['isim'].str.title()
 ```
 
+### İndeks İşlemleri
+
+```python
+# İndeks sıfırlama
+df.reset_index()                    # Eski indeksi sütun yap
+df.reset_index(drop=True)           # Eski indeksi tamamen sil
+df.reset_index(inplace=True)        # Yerinde değiştir
+df.to_csv("dosya.csv", index=False) # İndeks görünmez olur
+
+# Yeni indeks atama
+df.index = ['satır1', 'satır2', 'satır3', 'satır4']
+df.set_index('isim')                # Bir sütunu indeks yap
+df.set_index('isim', inplace=True)  # Yerinde değiştir
+df.set_index(['isim', 'şehir'])     # Çoklu indeks
+
+# İndeks silme ve değiştirme
+df.drop_level(0)                    # MultiIndex'te seviye sil
+df.droplevel(0, axis=1)             # Sütun MultiIndex'te seviye sil
+
+#Başlık değiştirme
+df = pd.read_csv("dosya.csv", header=6)
+df.columns = df.iloc[6]
+```
+
+### Satır ve Sütun Silme
+
+```python
+# Satır silme (indeks ile)
+df.drop(0)                          # 0 indeksli satırı sil
+df.drop([0, 2])                     # Birden fazla satır sil
+df.drop(index=[0, 2])               # Açık şekilde indeks belirt
+df.drop(range(0, 8))  # 0,1,2,3,4,5,6,7 silinir
+
+# Satır silme (koşula göre)
+df.drop(df[df['yaş'] < 25].index)   # Yaşı 25'ten küçük olanları sil
+
+# Sütun silme
+df.drop('isim', axis=1)             # İsim sütununu sil
+df.drop(['isim', 'şehir'], axis=1)  # Birden fazla sütun sil
+df.drop(columns=['isim', 'şehir'])  # Alternatif yazım
+
+# Yerinde silme
+df.drop('isim', axis=1, inplace=True)  # Orijinal DataFrame'i değiştir
+
+# İlk/son satırları silme
+df.drop(df.head(2).index)          # İlk 2 satırı sil
+df.drop(df.tail(3).index)          # Son 3 satırı sil
+
+# Boş satırları silme
+df.dropna()                         # Eksik değer olan satırları sil
+df.dropna(subset=['maaş'])          # Sadece maaş sütununda eksik olanları sil
+```
+
+### Satır ve Sütun Ekleme
+
+```python
+# Yeni satır ekleme
+yeni_satır = {'isim': 'Hasan', 'yaş': 27, 'şehir': 'Adana', 'maaş': 5200}
+df = pd.concat([df, pd.DataFrame([yeni_satır])], ignore_index=True)
+
+# Birden fazla satır ekleme
+yeni_satırlar = [
+    {'isim': 'Zeynep', 'yaş': 29, 'şehir': 'Antalya', 'maaş': 6800},
+    {'isim': 'Can', 'yaş': 33, 'şehir': 'Eskişehir', 'maaş': 7500}
+]
+df = pd.concat([df, pd.DataFrame(yeni_satırlar)], ignore_index=True)
+
+# Belirli pozisyona satır ekleme
+df_üst = df.iloc[:2]                # İlk 2 satır
+df_alt = df.iloc[2:]                # Kalan satırlar
+yeni_df = pd.concat([df_üst, pd.DataFrame([yeni_satır]), df_alt], ignore_index=True)
+
+# Sütun ekleme (önceden gösterildi)
+df['yeni_sütun'] = 'varsayılan_değer'
+df.insert(1, 'pozisyon_sütunu', 'değer')  # Belirli pozisyona ekle
+```
+
 ### Sıralama
 
 ```python
@@ -229,7 +306,9 @@ df.sort_values(['yaş', 'maaş'])
 df.sort_values(['yaş', 'maaş'], ascending=[True, False])
 
 # İndekse göre sıralama
-df.sort_index()
+df.sort_index()                          # İndeks sırasına göre
+df.sort_index(ascending=False)           # Ters indeks sırası
+df.sort_index(axis=1)                    # Sütun isimlerine göre sırala
 ```
 
 ## 📈 Gruplama ve Aggregation
@@ -483,8 +562,15 @@ df['maaş'].fillna(df['maaş'].median())
 
 # Eksik verileri silme
 df.dropna()                     # Eksik veri olan satırları sil
+df = df.dropna()                # DataFrame'i kalıcı olarak güncelle
 df.dropna(axis=1)               # Eksik veri olan sütunları sil
+df = df.dropna(axis=1)          # Sütun silmeyi kalıcı yap
 df.dropna(thresh=2)             # En az 2 dolu değer olan satırları tut
+df = df.dropna(thresh=2)        # Thresh işlemini kalıcı yap
+df.dropna(subset=['maaş'])      # Sadece maaş sütununda eksik olanları sil
+df = df.dropna(subset=['maaş']) # Subset işlemini kalıcı yap
+df.dropna(how='all')            # Tüm değerleri eksik olan satırları sil
+df = df.dropna(how='all')       # 'how=all' işlemini kalıcı yap
 ```
 
 ### Duplicate (Tekrar Eden) Veriler
@@ -547,8 +633,16 @@ df.std()           # Standart sapma
 df.var()           # Varyans
 df.min()           # Minimum
 df.max()           # Maksimum
+df.idxmin()        # Minimum değerin indeksi
+df.idxmax()        # Maksimum değerin indeksi
 df.quantile(0.25)  # %25 çeyreklik
 df.quantile([0.25, 0.5, 0.75])  # Çeyreklikler
+
+# Sütun bazlı indeks bulma
+df['yaş'].idxmin()    # En küçük yaşın indeksi
+df['yaş'].idxmax()    # En büyük yaşın indeksi
+df['maaş'].idxmin()   # En düşük maaşın indeksi
+df['maaş'].idxmax()   # En yüksek maaşın indeksi
 
 # Çarpıklık ve basıklık
 df.skew()          # Çarpıklık

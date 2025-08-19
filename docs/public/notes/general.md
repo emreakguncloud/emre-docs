@@ -7,7 +7,6 @@
 - [x] Optimizasyon Minimizasyon
 - [x] Regresyon
 - [x] İnterpolasyon
-- [ ] Scikit-learn Machine Learning
 - [ ] Kümeleştirme
 
 ## Proje Dokümantasyonu İlerleme Durumu
@@ -17,9 +16,10 @@
 - [ ] MarineMath (React Web App)
 - [ ] Şirket Projeleri???
 
-## Diğer İlerleme Durumu
+## Cern İlerleme Durumu
 
 - [ ] Git ve GitHub Kullanımı
+- [ ] Scikit-learn Machine Learning
 
 Tarih 15.08.2025 23:50
 
@@ -29,5 +29,4 @@ Tarih 15.08.2025 23:50
 - **SQL ve Veritabanı İşlemleri** 🗄️
 
 ### Planlanmakta Olan Özellikler:
-- **Interaktif örnekler** (Jupyter Notebook entegrasyonu)
 - **Cheat sheet'ler** (PDF formatında)

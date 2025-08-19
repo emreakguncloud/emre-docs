@@ -36,6 +36,12 @@ theme:
     text: Roboto
     code: Fira Code
 
+plugins:
+  - search
+  - mkdocs-jupyter:
+      execute: false
+      allow_errors: false
+      include_source: true
 
 markdown_extensions:
   - toc:
@@ -66,9 +72,10 @@ nav:
           - Sayısal Analiz:
               - Numpy: knowledge-base/python/numerical_analysis/numpy.md
               - Pandas: knowledge-base/python/numerical_analysis/pandas.md
+              - Pandas Egzersiz 1) : knowledge-base/python/numerical_analysis/Meteorological Data (Mostly String Handling).ipynb
               - İnterpolasyon ve Regresyon: knowledge-base/python/numerical_analysis/Interpolasyon-ve-Regresyon/Interpolasyon-ve-Regresyon.md
           - Grafik Oluşturma:
-              - Temel Grafikler: knowledge-base/python/graph/graph.md
+              - Temel Grafikler: knowledge-base/python/graph/Grafik.ipynb
   - Notlar:
       - İlerleme Notu: notes/general.md
       - Sayısal Analiz: notes/sayısal-analiz-kavramları.md

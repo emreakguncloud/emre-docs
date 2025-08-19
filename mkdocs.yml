@@ -33,6 +33,13 @@ theme:
     text: Roboto
     code: Fira Code
 
+plugins:
+  - search
+  - mkdocs-jupyter:
+      execute: false
+      allow_errors: false
+      include_source: true
+
 markdown_extensions:
   - toc:
       permalink: true
@@ -61,11 +68,12 @@ nav:
       - Python:
           - Sayısal Analiz:
               - Numpy: public/knowledge-base/python/numerical_analysis/numpy.md
-              - Pandas: public/knowledge-base/python/numerical_analysis/pandas.md 
+              - Pandas: public/knowledge-base/python/numerical_analysis/pandas.md
+              - Pandas Egzersiz 1) : public/knowledge-base/python/numerical_analysis/Meteorological Data (Mostly String Handling).ipynb
               - Optimizasyon/Minimizasyon: public/knowledge-base/python/numerical_analysis/optimizasyon-minimizasyon/optimizasyon-minimizasyon.md
               - İnterpolasyon ve Regresyon: public/knowledge-base/python/numerical_analysis/Interpolasyon-ve-Regresyon/Interpolasyon-ve-Regresyon.md
           - Grafik Oluşturma: 
-              - Temel Grafikler: public/knowledge-base/python/graph/graph.md
+              - Temel Grafikler: public/knowledge-base/python/graph/Grafik.ipynb
   - Notlar:
       - İlerleme Notu: public/notes/general.md
       - Sayısal Analiz: public/notes/sayısal-analiz-kavramları.md
@@ -77,4 +85,5 @@ nav:
       - MarineLife: private/projects/MarineLife/history.md
   - Gizli Not:
     - Gizli Notlarım: private/gizli.md
+    - Cern Çalışması: private/cern.md
     - Portfolio Sitesi Kararları: private/portfolio-site.md
