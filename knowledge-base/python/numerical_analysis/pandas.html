@@ -14,11 +14,11 @@
         <link rel="prev" href="numpy.html">
       
       
-        <link rel="next" href="Interpolasyon-ve-Regresyon/Interpolasyon-ve-Regresyon.html">
+        <link rel="next" href="Meteorological%20Data%20%28Mostly%20String%20Handling%29.html">
       
       
       <link rel="icon" href="../../../images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.17">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
@@ -708,6 +708,8 @@
       
         
       
+        
+      
     
     
     
@@ -963,6 +965,33 @@
   <a href="#veri-degistirme" class="md-nav__link">
     <span class="md-ellipsis">
       Veri Değiştirme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indeks-islemleri" class="md-nav__link">
+    <span class="md-ellipsis">
+      İndeks İşlemleri
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#satr-ve-sutun-silme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Satır ve Sütun Silme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#satr-ve-sutun-ekleme" class="md-nav__link">
+    <span class="md-ellipsis">
+      Satır ve Sütun Ekleme
     </span>
   </a>
   
@@ -1472,6 +1501,29 @@
   
   
     <li class="md-nav__item">
+      <a href="Meteorological%20Data%20%28Mostly%20String%20Handling%29.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Meteorological Data (Mostly String Handling)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="Interpolasyon-ve-Regresyon/Interpolasyon-ve-Regresyon.html" class="md-nav__link">
         
   
@@ -1550,12 +1602,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../graph/graph.html" class="md-nav__link">
+      <a href="../graph/Grafik.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Temel Grafikler
+    1. Sade Plot (Matplotlib ile)
     
   </span>
   
@@ -1911,9 +1963,9 @@
 <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">25</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">5500</span><span class="p">)]</span>  <span class="c1"># Birden fazla koşul</span>
 </code></pre></div>
 <h3 id="gelismis-filtreleme">Gelişmiş Filtreleme<a class="headerlink" href="#gelismis-filtreleme" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># isin() metodu</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># isin() metodu </span>
 <span class="n">şehirler</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;İstanbul&#39;</span><span class="p">,</span> <span class="s1">&#39;Ankara&#39;</span><span class="p">]</span>
-<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;şehir&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">şehirler</span><span class="p">)]</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;şehir&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">şehirler</span><span class="p">)]</span> <span class="c1">#İstanbul ve Ankara içeren verileri seç</span>
 
 <span class="c1"># String metotları</span>
 <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">)]</span>     <span class="c1"># İsmi A harfi içerenler</span>
@@ -1964,6 +2016,74 @@
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim_küçük&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim_title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
 </code></pre></div>
+<h3 id="indeks-islemleri">İndeks İşlemleri<a class="headerlink" href="#indeks-islemleri" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># İndeks sıfırlama</span>
+<span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>                    <span class="c1"># Eski indeksi sütun yap</span>
+<span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>           <span class="c1"># Eski indeksi tamamen sil</span>
+<span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>        <span class="c1"># Yerinde değiştir</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;dosya.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># İndeks görünmez olur</span>
+
+<span class="c1"># Yeni indeks atama</span>
+<span class="n">df</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;satır1&#39;</span><span class="p">,</span> <span class="s1">&#39;satır2&#39;</span><span class="p">,</span> <span class="s1">&#39;satır3&#39;</span><span class="p">,</span> <span class="s1">&#39;satır4&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;isim&#39;</span><span class="p">)</span>                <span class="c1"># Bir sütunu indeks yap</span>
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;isim&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Yerinde değiştir</span>
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s1">&#39;isim&#39;</span><span class="p">,</span> <span class="s1">&#39;şehir&#39;</span><span class="p">])</span>     <span class="c1"># Çoklu indeks</span>
+
+<span class="c1"># İndeks silme ve değiştirme</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop_level</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>                    <span class="c1"># MultiIndex&#39;te seviye sil</span>
+<span class="n">df</span><span class="o">.</span><span class="n">droplevel</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>             <span class="c1"># Sütun MultiIndex&#39;te seviye sil</span>
+
+<span class="c1">#Başlık değiştirme</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;dosya.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="satr-ve-sutun-silme">Satır ve Sütun Silme<a class="headerlink" href="#satr-ve-sutun-silme" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Satır silme (indeks ile)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>                          <span class="c1"># 0 indeksli satırı sil</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>                     <span class="c1"># Birden fazla satır sil</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>               <span class="c1"># Açık şekilde indeks belirt</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>  <span class="c1"># 0,1,2,3,4,5,6,7 silinir</span>
+
+<span class="c1"># Satır silme (koşula göre)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>   <span class="c1"># Yaşı 25&#39;ten küçük olanları sil</span>
+
+<span class="c1"># Sütun silme</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;isim&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>             <span class="c1"># İsim sütununu sil</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;isim&#39;</span><span class="p">,</span> <span class="s1">&#39;şehir&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Birden fazla sütun sil</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;isim&#39;</span><span class="p">,</span> <span class="s1">&#39;şehir&#39;</span><span class="p">])</span>  <span class="c1"># Alternatif yazım</span>
+
+<span class="c1"># Yerinde silme</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;isim&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># Orijinal DataFrame&#39;i değiştir</span>
+
+<span class="c1"># İlk/son satırları silme</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>          <span class="c1"># İlk 2 satırı sil</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>          <span class="c1"># Son 3 satırı sil</span>
+
+<span class="c1"># Boş satırları silme</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>                         <span class="c1"># Eksik değer olan satırları sil</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;maaş&#39;</span><span class="p">])</span>          <span class="c1"># Sadece maaş sütununda eksik olanları sil</span>
+</code></pre></div>
+<h3 id="satr-ve-sutun-ekleme">Satır ve Sütun Ekleme<a class="headerlink" href="#satr-ve-sutun-ekleme" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Yeni satır ekleme</span>
+<span class="n">yeni_satır</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;isim&#39;</span><span class="p">:</span> <span class="s1">&#39;Hasan&#39;</span><span class="p">,</span> <span class="s1">&#39;yaş&#39;</span><span class="p">:</span> <span class="mi">27</span><span class="p">,</span> <span class="s1">&#39;şehir&#39;</span><span class="p">:</span> <span class="s1">&#39;Adana&#39;</span><span class="p">,</span> <span class="s1">&#39;maaş&#39;</span><span class="p">:</span> <span class="mi">5200</span><span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">yeni_satır</span><span class="p">])],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Birden fazla satır ekleme</span>
+<span class="n">yeni_satırlar</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s1">&#39;isim&#39;</span><span class="p">:</span> <span class="s1">&#39;Zeynep&#39;</span><span class="p">,</span> <span class="s1">&#39;yaş&#39;</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span> <span class="s1">&#39;şehir&#39;</span><span class="p">:</span> <span class="s1">&#39;Antalya&#39;</span><span class="p">,</span> <span class="s1">&#39;maaş&#39;</span><span class="p">:</span> <span class="mi">6800</span><span class="p">},</span>
+    <span class="p">{</span><span class="s1">&#39;isim&#39;</span><span class="p">:</span> <span class="s1">&#39;Can&#39;</span><span class="p">,</span> <span class="s1">&#39;yaş&#39;</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span> <span class="s1">&#39;şehir&#39;</span><span class="p">:</span> <span class="s1">&#39;Eskişehir&#39;</span><span class="p">,</span> <span class="s1">&#39;maaş&#39;</span><span class="p">:</span> <span class="mi">7500</span><span class="p">}</span>
+<span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">yeni_satırlar</span><span class="p">)],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Belirli pozisyona satır ekleme</span>
+<span class="n">df_üst</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span>                <span class="c1"># İlk 2 satır</span>
+<span class="n">df_alt</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>                <span class="c1"># Kalan satırlar</span>
+<span class="n">yeni_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df_üst</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">yeni_satır</span><span class="p">]),</span> <span class="n">df_alt</span><span class="p">],</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Sütun ekleme (önceden gösterildi)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;yeni_sütun&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;varsayılan_değer&#39;</span>
+<span class="n">df</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;pozisyon_sütunu&#39;</span><span class="p">,</span> <span class="s1">&#39;değer&#39;</span><span class="p">)</span>  <span class="c1"># Belirli pozisyona ekle</span>
+</code></pre></div>
 <h3 id="sralama">Sıralama<a class="headerlink" href="#sralama" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Tek sütuna göre sıralama</span>
 <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;yaş&#39;</span><span class="p">)</span>                    <span class="c1"># Artan sırada</span>
@@ -1974,7 +2094,9 @@
 <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s1">&#39;yaş&#39;</span><span class="p">,</span> <span class="s1">&#39;maaş&#39;</span><span class="p">],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">])</span>
 
 <span class="c1"># İndekse göre sıralama</span>
-<span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>                          <span class="c1"># İndeks sırasına göre</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>           <span class="c1"># Ters indeks sırası</span>
+<span class="n">df</span><span class="o">.</span><span class="n">sort_index</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>                    <span class="c1"># Sütun isimlerine göre sırala</span>
 </code></pre></div>
 <h2 id="gruplama-ve-aggregation">📈 Gruplama ve Aggregation<a class="headerlink" href="#gruplama-ve-aggregation" title="Permanent link">&para;</a></h2>
 <h3 id="temel-gruplama">Temel Gruplama<a class="headerlink" href="#temel-gruplama" title="Permanent link">&para;</a></h3>
@@ -2186,8 +2308,15 @@
 
 <span class="c1"># Eksik verileri silme</span>
 <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>                     <span class="c1"># Eksik veri olan satırları sil</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>                <span class="c1"># DataFrame&#39;i kalıcı olarak güncelle</span>
 <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>               <span class="c1"># Eksik veri olan sütunları sil</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>          <span class="c1"># Sütun silmeyi kalıcı yap</span>
 <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">thresh</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>             <span class="c1"># En az 2 dolu değer olan satırları tut</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">thresh</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>        <span class="c1"># Thresh işlemini kalıcı yap</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;maaş&#39;</span><span class="p">])</span>      <span class="c1"># Sadece maaş sütununda eksik olanları sil</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;maaş&#39;</span><span class="p">])</span> <span class="c1"># Subset işlemini kalıcı yap</span>
+<span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>            <span class="c1"># Tüm değerleri eksik olan satırları sil</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>       <span class="c1"># &#39;how=all&#39; işlemini kalıcı yap</span>
 </code></pre></div>
 <h3 id="duplicate-tekrar-eden-veriler">Duplicate (Tekrar Eden) Veriler<a class="headerlink" href="#duplicate-tekrar-eden-veriler" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Tekrar eden satırları bulma</span>
@@ -2237,8 +2366,16 @@
 <span class="n">df</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>           <span class="c1"># Varyans</span>
 <span class="n">df</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>           <span class="c1"># Minimum</span>
 <span class="n">df</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>           <span class="c1"># Maksimum</span>
+<span class="n">df</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span>        <span class="c1"># Minimum değerin indeksi</span>
+<span class="n">df</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>        <span class="c1"># Maksimum değerin indeksi</span>
 <span class="n">df</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>  <span class="c1"># %25 çeyreklik</span>
 <span class="n">df</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">])</span>  <span class="c1"># Çeyreklikler</span>
+
+<span class="c1"># Sütun bazlı indeks bulma</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span>    <span class="c1"># En küçük yaşın indeksi</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;yaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>    <span class="c1"># En büyük yaşın indeksi</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmin</span><span class="p">()</span>   <span class="c1"># En düşük maaşın indeksi</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;maaş&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">idxmax</span><span class="p">()</span>   <span class="c1"># En yüksek maaşın indeksi</span>
 
 <span class="c1"># Çarpıklık ve basıklık</span>
 <span class="n">df</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span>          <span class="c1"># Çarpıklık</span>
