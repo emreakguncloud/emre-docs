@@ -19,8 +19,7 @@ jobs:
           python-version: '3.x'
 
       - name: Gereksinimleri kur
-        run: |
-          pip install mkdocs mkdocs-material
+        run: pip install -r requirements.txt
 
       - name: MkDocs ile site'yi derle
         run: mkdocs build -f mkdocs-public.yml
