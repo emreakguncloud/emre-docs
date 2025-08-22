@@ -69,7 +69,7 @@ nav:
           - Sayısal Analiz:
               - Numpy: public/knowledge-base/python/numerical_analysis/numpy.md
               - Pandas: public/knowledge-base/python/numerical_analysis/pandas.md
-              - Pandas Egzersiz 1) : public/knowledge-base/python/numerical_analysis/Meteorological Data (Mostly String Handling).ipynb
+              - Pandas Egzersiz 1) : public/knowledge-base/python/numerical_analysis/Meteorological_Data_Mostly_String_Handling.ipynb
               - Optimizasyon/Minimizasyon: public/knowledge-base/python/numerical_analysis/optimizasyon-minimizasyon/optimizasyon-minimizasyon.md
               - İnterpolasyon ve Regresyon: public/knowledge-base/python/numerical_analysis/Interpolasyon-ve-Regresyon/Interpolasyon-ve-Regresyon.md
           - Grafik Oluşturma: 
