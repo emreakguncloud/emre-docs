@@ -18,10 +18,10 @@
 
 ## Cern İlerleme Durumu
 
-- [ ] Git ve GitHub Kullanımı
+- [x] Git ve GitHub Kullanımı
 - [ ] Scikit-learn Machine Learning
 
-Tarih 15.08.2025 23:50
+Tarih 02.09.2025 02:36
 
 ## 🚧 Gelecek Planlar
 

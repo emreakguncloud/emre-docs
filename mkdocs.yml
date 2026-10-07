@@ -65,6 +65,7 @@ nav:
           - Database: public/projects/MarineMath-CustomTkinter-Desktop-App/database.md
   - Bilgi Bankası:
       - Ana Sayfa: public/knowledge-base/index.md
+      - Git ve GitHub Kullanımı: public/knowledge-base/git-github-kullanimi.md
       - Python:
           - Sayısal Analiz:
               - Numpy: public/knowledge-base/python/numerical_analysis/numpy.md
@@ -87,3 +88,4 @@ nav:
     - Gizli Notlarım: private/gizli.md
     - Cern Çalışması: private/cern.md
     - Portfolio Sitesi Kararları: private/portfolio-site.md
+    - Çalışma-Öğrenme Önerileri: private/calisma-ogrenme-onerileri.md

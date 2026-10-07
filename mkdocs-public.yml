@@ -68,11 +68,13 @@ nav:
           - Database: projects/MarineMath-CustomTkinter-Desktop-App/database.md
   - Bilgi Bankası:
       - Ana Sayfa: knowledge-base/index.md
+      - Git ve GitHub Kullanımı: knowledge-base/git-github-kullanimi.md
       - Python:
           - Sayısal Analiz:
               - Numpy: knowledge-base/python/numerical_analysis/numpy.md
               - Pandas: knowledge-base/python/numerical_analysis/pandas.md
               - Pandas Egzersiz 1) : knowledge-base/python/numerical_analysis/Meteorological_Data_Mostly_String_Handling.ipynb
+              - Optimizasyon/Minimizasyon: knowledge-base/python/numerical_analysis/optimizasyon-minimizasyon/optimizasyon-minimizasyon.md
               - İnterpolasyon ve Regresyon: knowledge-base/python/numerical_analysis/Interpolasyon-ve-Regresyon/Interpolasyon-ve-Regresyon.md
           - Grafik Oluşturma:
               - Temel Grafikler: knowledge-base/python/graph/Grafik.ipynb

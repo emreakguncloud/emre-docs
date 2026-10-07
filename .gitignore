@@ -1,1 +1,5 @@
 docs/private/
+.venv/
+site/
+__pycache__/
+.cache/
